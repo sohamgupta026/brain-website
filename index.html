@@ -14,20 +14,30 @@
       opacity: 0;
       animation: fadeUp 0.8s ease 0.4s forwards;
     }
+
     #brain-svg {
       width: 100%;
       height: auto;
       display: block;
       filter: drop-shadow(0 0 60px rgba(79,163,224,0.15));
     }
+
     .brain-region { cursor: pointer; }
+
     .brain-region ellipse,
     .brain-region path,
-    .brain-region circle { transition: fill-opacity 0.25s; }
+    .brain-region circle {
+      transition: fill-opacity 0.25s;
+    }
+
     .brain-region:hover ellipse,
     .brain-region:hover path,
-    .brain-region:hover circle { fill-opacity: 0.45 !important; }
+    .brain-region:hover circle {
+      fill-opacity: 0.45 !important;
+    }
+
     .brain-region text { pointer-events: none; }
+
     .brain-tooltip {
       position: absolute;
       background: rgba(13,21,32,0.95);
@@ -45,7 +55,9 @@
       box-shadow: 0 0 25px rgba(79,163,224,0.2);
       z-index: 10;
     }
+
     .brain-tooltip.visible { opacity: 1; }
+
     .click-hint {
       font-family: 'Space Mono', monospace;
       font-size: 0.66rem;
@@ -56,6 +68,7 @@
       margin-top: 1.75rem;
       animation: pulse 2.5s ease-in-out infinite;
     }
+
     @keyframes pulse { 0%,100%{opacity:0.4} 50%{opacity:1} }
   </style>
 </head>
@@ -67,24 +80,13 @@
     <a href="index.html" class="nav-logo">🧠 The Brain</a>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
-      <li class="nav-dropdown">
-        <button class="nav-dropdown-btn">Regions</button>
-        <div class="nav-dropdown-menu">
-          <a href="pages/frontal-lobe.html"><span class="dropdown-dot" style="background:#4fa3e0"></span>Frontal Lobe</a>
-          <a href="pages/parietal-lobe.html"><span class="dropdown-dot" style="background:#7dd3c8"></span>Parietal Lobe</a>
-          <a href="pages/occipital-lobe.html"><span class="dropdown-dot" style="background:#a78bfa"></span>Occipital Lobe</a>
-          <a href="pages/temporal-lobe.html"><span class="dropdown-dot" style="background:#f59e0b"></span>Temporal Lobe</a>
-          <a href="pages/cerebellum.html"><span class="dropdown-dot" style="background:#34d399"></span>Cerebellum</a>
-          <a href="pages/brainstem.html"><span class="dropdown-dot" style="background:#f87171"></span>Brainstem</a>
-          <a href="pages/hippocampus.html"><span class="dropdown-dot" style="background:#fb923c"></span>Hippocampus</a>
-        </div>
-      </li>
       <li><a href="pages/about.html">About</a></li>
     </ul>
     <button class="theme-toggle" id="theme-btn" onclick="toggleTheme()">◑ Slate</button>
   </nav>
 
   <div class="page">
+
     <section class="hero">
       <p class="hero-label">Interactive Neuroanatomy</p>
       <h1>Explore the <em>Human Brain</em></h1>
@@ -93,7 +95,9 @@
 
     <section class="brain-map-section">
       <div class="brain-map-wrapper">
+
         <div class="brain-tooltip" id="brain-tooltip"></div>
+
         <svg id="brain-svg" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <radialGradient id="bgGlow" cx="50%" cy="50%" r="50%">
@@ -102,47 +106,66 @@
             </radialGradient>
             <filter id="glow">
               <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-              <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+              <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
             </filter>
           </defs>
+
           <ellipse cx="400" cy="250" rx="370" ry="230" fill="url(#bgGlow)"/>
           <g opacity="0.2">
             <ellipse cx="400" cy="240" rx="280" ry="190" fill="none" stroke="#4fa3e0" stroke-width="1"/>
           </g>
+
+          <!-- FRONTAL LOBE -->
           <g class="brain-region" data-name="Frontal Lobe" data-href="pages/frontal-lobe.html" style="cursor:pointer">
             <ellipse cx="240" cy="195" rx="135" ry="105" fill="#4fa3e0" fill-opacity="0.15" stroke="#4fa3e0" stroke-width="1.5"/>
             <text x="240" y="190" text-anchor="middle" fill="#4fa3e0" font-family="Space Mono,monospace" font-size="13" pointer-events="none">FRONTAL</text>
             <text x="240" y="207" text-anchor="middle" fill="#4fa3e0" font-family="Space Mono,monospace" font-size="13" pointer-events="none">LOBE</text>
           </g>
+
+          <!-- PARIETAL LOBE -->
           <g class="brain-region" data-name="Parietal Lobe" data-href="pages/parietal-lobe.html" style="cursor:pointer">
             <ellipse cx="430" cy="160" rx="115" ry="80" fill="#7dd3c8" fill-opacity="0.15" stroke="#7dd3c8" stroke-width="1.5"/>
             <text x="430" y="155" text-anchor="middle" fill="#7dd3c8" font-family="Space Mono,monospace" font-size="13" pointer-events="none">PARIETAL</text>
             <text x="430" y="172" text-anchor="middle" fill="#7dd3c8" font-family="Space Mono,monospace" font-size="13" pointer-events="none">LOBE</text>
           </g>
+
+          <!-- OCCIPITAL LOBE -->
           <g class="brain-region" data-name="Occipital Lobe" data-href="pages/occipital-lobe.html" style="cursor:pointer">
             <ellipse cx="575" cy="205" rx="95" ry="80" fill="#a78bfa" fill-opacity="0.15" stroke="#a78bfa" stroke-width="1.5"/>
             <text x="575" y="200" text-anchor="middle" fill="#a78bfa" font-family="Space Mono,monospace" font-size="13" pointer-events="none">OCCIPITAL</text>
             <text x="575" y="217" text-anchor="middle" fill="#a78bfa" font-family="Space Mono,monospace" font-size="13" pointer-events="none">LOBE</text>
           </g>
+
+          <!-- TEMPORAL LOBE -->
           <g class="brain-region" data-name="Temporal Lobe" data-href="pages/temporal-lobe.html" style="cursor:pointer">
             <ellipse cx="365" cy="330" rx="120" ry="68" fill="#f59e0b" fill-opacity="0.15" stroke="#f59e0b" stroke-width="1.5"/>
             <text x="365" y="325" text-anchor="middle" fill="#f59e0b" font-family="Space Mono,monospace" font-size="13" pointer-events="none">TEMPORAL</text>
             <text x="365" y="342" text-anchor="middle" fill="#f59e0b" font-family="Space Mono,monospace" font-size="13" pointer-events="none">LOBE</text>
           </g>
+
+          <!-- CEREBELLUM -->
           <g class="brain-region" data-name="Cerebellum" data-href="pages/cerebellum.html" style="cursor:pointer">
             <ellipse cx="560" cy="345" rx="100" ry="72" fill="#34d399" fill-opacity="0.15" stroke="#34d399" stroke-width="1.5"/>
             <text x="560" y="349" text-anchor="middle" fill="#34d399" font-family="Space Mono,monospace" font-size="13" pointer-events="none">CEREBELLUM</text>
           </g>
+
+          <!-- BRAINSTEM -->
           <g class="brain-region" data-name="Brainstem" data-href="pages/brainstem.html" style="cursor:pointer">
             <ellipse cx="463" cy="408" rx="55" ry="52" fill="#f87171" fill-opacity="0.15" stroke="#f87171" stroke-width="1.5"/>
             <text x="463" y="403" text-anchor="middle" fill="#f87171" font-family="Space Mono,monospace" font-size="13" pointer-events="none">BRAIN</text>
             <text x="463" y="420" text-anchor="middle" fill="#f87171" font-family="Space Mono,monospace" font-size="13" pointer-events="none">STEM</text>
           </g>
+
+          <!-- HIPPOCAMPUS -->
           <g class="brain-region" data-name="Hippocampus" data-href="pages/hippocampus.html" style="cursor:pointer">
             <ellipse cx="235" cy="345" rx="82" ry="50" fill="#fb923c" fill-opacity="0.15" stroke="#fb923c" stroke-width="1.5"/>
             <text x="235" y="340" text-anchor="middle" fill="#fb923c" font-family="Space Mono,monospace" font-size="11" pointer-events="none">HIPPO-</text>
             <text x="235" y="355" text-anchor="middle" fill="#fb923c" font-family="Space Mono,monospace" font-size="11" pointer-events="none">CAMPUS</text>
           </g>
+
         </svg>
       </div>
 
@@ -157,11 +180,13 @@
         <a href="pages/brainstem.html"      class="legend-item"><span class="legend-dot" style="background:#f87171"></span>Brainstem</a>
         <a href="pages/hippocampus.html"    class="legend-item"><span class="legend-dot" style="background:#fb923c"></span>Hippocampus</a>
       </div>
+
     </section>
 
     <footer>
       <p>The Human Brain · Interactive Neuroanatomy · Built for Science Class</p>
     </footer>
+
   </div>
 
   <script src="js/main.js"></script>
