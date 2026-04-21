@@ -169,16 +169,26 @@
   <div id="progress-bar"></div>
 
   <!-- NAVIGATION -->
-  <nav>
+ <nav>
     <a href="../index.html" class="nav-logo">🧠 The Brain</a>
     <ul class="nav-links">
       <li><a href="../index.html">Home</a></li>
-      <li><a href="about.html" class="active">About</a></li>
+      <li class="nav-dropdown">
+        <button class="nav-dropdown-btn">Regions</button>
+        <div class="nav-dropdown-menu">
+          <a href="frontal-lobe.html"><span class="dropdown-dot" style="background:#4fa3e0"></span>Frontal Lobe</a>
+          <a href="parietal-lobe.html"><span class="dropdown-dot" style="background:#7dd3c8"></span>Parietal Lobe</a>
+          <a href="occipital-lobe.html"><span class="dropdown-dot" style="background:#a78bfa"></span>Occipital Lobe</a>
+          <a href="temporal-lobe.html"><span class="dropdown-dot" style="background:#f59e0b"></span>Temporal Lobe</a>
+          <a href="cerebellum.html"><span class="dropdown-dot" style="background:#34d399"></span>Cerebellum</a>
+          <a href="brainstem.html"><span class="dropdown-dot" style="background:#f87171"></span>Brainstem</a>
+          <a href="hippocampus.html"><span class="dropdown-dot" style="background:#fb923c"></span>Hippocampus</a>
+        </div>
+      </li>
+      <li><a href="about.html">About</a></li>
     </ul>
-    <button class="theme-toggle" id="theme-btn" onclick="toggleTheme()">◑ Light</button>
-  </nav>
-
-  <div class="page">
+    <button class="theme-toggle" id="theme-btn" onclick="toggleTheme()">◑ Slate</button>
+</nav>
 
     <!-- BANNER -->
     <div class="region-banner about-banner">
