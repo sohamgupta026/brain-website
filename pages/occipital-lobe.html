@@ -1,1 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Occipital Lobe · The Human Brain</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
 
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="../index.html" class="nav-logo">🧠 The Brain</a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <button class="theme-toggle" id="theme-btn" onclick="toggleTheme()">◑ Light</button>
+  </nav>
+
+  <div class="page">
+    <div class="content-page">
+
+      <a href="../index.html" class="back-link">Back to Brain Map</a>
+
+      <!-- HEADER -->
+      <div class="region-header">
+        <span class="region-tag" style="color:#a78bfa">Region 03 · Cerebral Cortex</span>
+        <h1>Occipital Lobe</h1>
+        <p class="subtitle">The brain's visual cortex — everything you see is processed here.</p>
+      </div>
+
+      <!-- STATS -->
+      <div class="stats-row">
+        <div class="stat">
+          <span class="stat-value">~17%</span>
+          <span class="stat-label">of cortex</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">V1–V5</span>
+          <span class="stat-label">visual areas</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">Back</span>
+          <span class="stat-label">of the skull</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">30%</span>
+          <span class="stat-label">of cortex used for vision</span>
+        </div>
+      </div>
+
+      <!-- CONTENT -->
+      <div class="content-body">
+
+        <h2>What Is the Occipital Lobe?</h2>
+        <p>
+          The occipital lobe is located at the very back of the brain and is the smallest
+          of the four cerebral lobes. It is entirely dedicated to processing visual
+          information. Every time you look at something — a face, a color, a moving object —
+          the raw data from your eyes travels to the occipital lobe to be decoded and
+          interpreted.
+        </p>
+        <p>
+          Despite being at the back of your head, it processes everything you see in front
+          of you. The left occipital lobe processes the right visual field and the right
+          occipital lobe processes the left visual field — a crossover that happens because
+          of how the optic nerves are wired.
+        </p>
+
+        <h2>Key Functions</h2>
+        <div class="function-cards">
+          <div class="func-card">
+            <span class="func-icon">👁️</span>
+            <h3>Visual Processing</h3>
+            <p>Receives and decodes raw visual signals sent from the retinas.</p>
+          </div>
+          <div class="func-card">
+            <span class="func-icon">🎨</span>
+            <h3>Color Recognition</h3>
+            <p>Identifies and distinguishes between different colors and hues.</p>
+          </div>
+          <div class="func-card">
+            <span class="func-icon">📐</span>
+            <h3>Shape & Depth</h3>
+            <p>Processes the shapes, edges, and depth of objects in your visual field.</p>
+          </div>
+          <div class="func-card">
+            <span class="func-icon">🏃</span>
+            <h3>Motion Detection</h3>
+            <p>Tracks moving objects and calculates speed and direction.</p>
+          </div>
+          <div class="func-card">
+            <span class="func-icon">🔤</span>
+            <h3>Reading</h3>
+            <p>Processes the visual appearance of letters and words before language areas interpret them.</p>
+          </div>
+          <div class="func-card">
+            <span class="func-icon">🗺️</span>
+            <h3>Spatial Mapping</h3>
+            <p>Helps build a visual map of the environment around you.</p>
+          </div>
+        </div>
+
+        <h2>How Visual Processing Works</h2>
+        <p>
+          When light hits your retina, it gets converted into electrical signals that travel
+          along the optic nerve to the primary visual cortex — also called V1 — at the back
+          of the occipital lobe. From there, visual information splits into two processing
+          streams.
+        </p>
+        <p>
+          The ventral stream, sometimes called the "what pathway," travels downward toward
+          the temporal lobe and helps you identify what you are looking at — recognizing
+          faces, objects, and colors. The dorsal stream, or "where pathway," travels upward
+          toward the parietal lobe and tells you where objects are and how to interact
+          with them.
+        </p>
+
+        <div class="did-you-know">
+          <span class="label">Did You Know</span>
+          <p>
+            Even when your eyes are closed, your occipital lobe stays active. When you dream,
+            it fires almost as intensely as when you are awake — which is why dreams feel
+            so visually vivid and real. Some blind people also experience visual dreams if
+            they lost their sight after early childhood.
+          </p>
+        </div>
+
+        <h2>What Happens When It's Damaged?</h2>
+        <p>Damage to the occipital lobe can cause:</p>
+        <ul>
+          <li>Cortical blindness — loss of vision even though the eyes are fine</li>
+          <li>Inability to recognize colors (achromatopsia)</li>
+          <li>Visual hallucinations and distortions</li>
+          <li>Difficulty recognizing faces or objects</li>
+          <li>Loss of the ability to perceive motion</li>
+        </ul>
+
+        <!-- QUIZ -->
+        <div class="quiz-widget">
+          <h3>Quick Check — Occipital Lobe</h3>
+          <p class="quiz-question">What is the name of the pathway that helps you identify WHAT you are looking at?</p>
+          <div class="quiz-options">
+            <button class="quiz-option" data-correct="false">The Dorsal Stream</button>
+            <button class="quiz-option" data-correct="true">The Ventral Stream</button>
+            <button class="quiz-option" data-correct="false">The Optic Pathway</button>
+            <button class="quiz-option" data-correct="false">The Visual Cortex</button>
+          </div>
+          <p class="quiz-feedback" id="quiz-feedback"></p>
+        </div>
+
+      </div>
+    </div>
+
+    <footer>
+      <p>The Human Brain · Interactive Neuroanatomy</p>
+    </footer>
+  </div>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
