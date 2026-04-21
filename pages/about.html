@@ -17,11 +17,6 @@
                   radial-gradient(ellipse at 80% 20%, rgba(79,163,224,0.1) 0%, transparent 60%);
     }
 
-    /* ── DIAGRAM SECTION ── */
-    .diagram-section {
-      margin: 0 0 3rem;
-    }
-
     .diagram-click-wrap {
       position: relative;
       cursor: zoom-in;
@@ -32,7 +27,7 @@
       box-shadow: 0 8px 40px rgba(0,0,0,0.4);
       transition: box-shadow 0.3s, transform 0.3s;
       max-width: 700px;
-      margin: 0 auto 1rem;
+      margin: 0 auto 0;
     }
 
     .diagram-click-wrap:hover {
@@ -48,9 +43,7 @@
       transition: opacity 0.2s;
     }
 
-    .diagram-click-wrap:hover .brain-diagram-img {
-      opacity: 1;
-    }
+    .diagram-click-wrap:hover .brain-diagram-img { opacity: 1; }
 
     .diagram-zoom-hint {
       position: absolute;
@@ -75,7 +68,7 @@
       border-radius: 0 0 12px 12px;
       padding: 1.5rem 2rem;
       max-width: 700px;
-      margin: 0 auto;
+      margin: 0 auto 2rem;
     }
 
     .diagram-caption-label {
@@ -117,7 +110,7 @@
       opacity: 0.8;
     }
 
-    /* ── LIGHTBOX ── */
+    /* LIGHTBOX */
     .lightbox {
       position: fixed;
       inset: 0;
@@ -148,9 +141,7 @@
       transition: transform 0.3s;
     }
 
-    .lightbox.active img {
-      transform: scale(1);
-    }
+    .lightbox.active img { transform: scale(1); }
 
     .lightbox-close {
       position: absolute;
@@ -175,7 +166,6 @@
       background: rgba(79,163,224,0.08);
     }
 
-    /* ── REST OF PAGE ── */
     .region-links {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -341,40 +331,6 @@
 
       <div class="content-body">
 
-        <!-- DIAGRAM SECTION -->
-        <div class="diagram-section">
-
-          <div class="diagram-click-wrap" onclick="openLightbox()">
-            <img
-              src="../images/brain-diagram.png"
-              alt="Detailed anatomical diagram of the human brain showing all major regions"
-              class="brain-diagram-img"
-            />
-            <span class="diagram-zoom-hint">🔍 Click to enlarge</span>
-          </div>
-
-          <div class="diagram-caption">
-            <span class="diagram-caption-label">Anatomical Reference Diagram</span>
-            <p>
-              This cross-sectional illustration shows the seven major regions of the human
-              brain covered on this site. Each region is color-coded and labeled with its
-              primary function. The diagram shows a lateral view — meaning the brain is
-              seen from the side — which reveals the layered structure from the outer
-              cerebral cortex all the way down to the brainstem at the base.
-            </p>
-            <div class="diagram-region-tags">
-              <span class="diagram-tag" style="color:#4fa3e0">Frontal Lobe</span>
-              <span class="diagram-tag" style="color:#7dd3c8">Parietal Lobe</span>
-              <span class="diagram-tag" style="color:#a78bfa">Occipital Lobe</span>
-              <span class="diagram-tag" style="color:#f59e0b">Temporal Lobe</span>
-              <span class="diagram-tag" style="color:#fb923c">Hippocampus</span>
-              <span class="diagram-tag" style="color:#34d399">Cerebellum</span>
-              <span class="diagram-tag" style="color:#f87171">Brainstem</span>
-            </div>
-          </div>
-
-        </div>
-
         <h2>What Is This Site?</h2>
         <p>This is an interactive neuroanatomy guide built to make learning about the human brain visual, engaging, and accessible. Instead of reading a flat textbook, you can click directly on the brain regions that interest you and explore each one through detailed descriptions, key functions, real-world cases, and a quick quiz to test your understanding.</p>
         <p>The brain is the most complex structure ever discovered in the known universe. It contains roughly 86 billion neurons, each forming thousands of connections, creating a network more intricate than any computer ever built. This site is a starting point for exploring that complexity — one region at a time.</p>
@@ -408,7 +364,31 @@
         </div>
 
         <h2>Regions Covered</h2>
-        <p>This site covers seven major brain regions. Click any of them to explore:</p>
+        <p>This site covers seven major brain regions. The diagram below shows where each one is located. Click the image to enlarge it, or click any region card to explore it in depth.</p>
+
+        <!-- DIAGRAM MOVED HERE -->
+        <div class="diagram-click-wrap" onclick="openLightbox()">
+          <img
+            src="../images/brain-diagram.png"
+            alt="Detailed anatomical diagram of the human brain showing all major regions"
+            class="brain-diagram-img"
+          />
+          <span class="diagram-zoom-hint">🔍 Click to enlarge</span>
+        </div>
+
+        <div class="diagram-caption">
+          <span class="diagram-caption-label">Anatomical Reference Diagram</span>
+          <p>A lateral cross-section of the human brain showing all seven regions covered on this site. Each region is color-coded and labeled with its primary function. Click the image above to view it full screen.</p>
+          <div class="diagram-region-tags">
+            <span class="diagram-tag" style="color:#4fa3e0">Frontal Lobe</span>
+            <span class="diagram-tag" style="color:#7dd3c8">Parietal Lobe</span>
+            <span class="diagram-tag" style="color:#a78bfa">Occipital Lobe</span>
+            <span class="diagram-tag" style="color:#f59e0b">Temporal Lobe</span>
+            <span class="diagram-tag" style="color:#fb923c">Hippocampus</span>
+            <span class="diagram-tag" style="color:#34d399">Cerebellum</span>
+            <span class="diagram-tag" style="color:#f87171">Brainstem</span>
+          </div>
+        </div>
 
         <div class="region-links">
           <a href="frontal-lobe.html" class="region-link-card" style="--link-color:#4fa3e0">
@@ -488,14 +468,12 @@
 
   <script src="../js/main.js"></script>
   <script>
-    // Progress bar
     window.addEventListener('scroll', () => {
       const bar = document.getElementById('progress-bar');
       const scrolled = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
       bar.style.width = scrolled + '%';
     });
 
-    // Lightbox
     function openLightbox() {
       document.getElementById('lightbox').classList.add('active');
       document.body.style.overflow = 'hidden';
@@ -506,7 +484,6 @@
       document.body.style.overflow = '';
     }
 
-    // Close lightbox with Escape key
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') closeLightbox();
     });
