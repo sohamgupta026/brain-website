@@ -1,1 +1,202 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brainstem · The Human Brain</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    :root { --region-color: #f87171; }
 
+    .region-banner {
+      background: linear-gradient(135deg, #0d1520 0%, #1a0800 100%);
+    }
+
+    .region-banner-bg {
+      background: radial-gradient(ellipse at 30% 50%, rgba(248,113,113,0.25) 0%, transparent 70%),
+                  radial-gradient(ellipse at 80% 20%, rgba(248,113,113,0.1) 0%, transparent 60%);
+    }
+
+    .stat-value { color: #f87171; }
+  </style>
+</head>
+<body>
+
+  <div id="progress-bar"></div>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="../index.html" class="nav-logo">🧠 The Brain</a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <button class="theme-toggle" id="theme-btn" onclick="toggleTheme()">◑ Light</button>
+  </nav>
+
+  <div class="page">
+
+    <!-- BANNER -->
+    <div class="region-banner">
+      <div class="region-banner-bg"></div>
+      <div class="region-banner-grid"></div>
+      <div class="region-banner-content">
+        <div class="region-number" style="color:#f87171">Region 06 · Core Brain</div>
+        <h1>Brainstem</h1>
+        <p class="subtitle">The brain's life support system — controlling every function you never think about.</p>
+      </div>
+    </div>
+
+    <div class="content-page">
+
+      <a href="../index.html" class="back-link">Back to Brain Map</a>
+
+      <!-- STATS -->
+      <div class="stats-row">
+        <div class="stat">
+          <span class="stat-value">3 Parts</span>
+          <span class="stat-label">midbrain, pons, medulla</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">~6cm</span>
+          <span class="stat-label">in length</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">10 of 12</span>
+          <span class="stat-label">cranial nerves</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">Always</span>
+          <span class="stat-label">active, even in sleep</span>
+        </div>
+      </div>
+
+      <!-- CONTENT -->
+      <div class="content-body">
+
+        <h2>What Is the Brainstem?</h2>
+        <p>
+          The brainstem is the oldest and most essential part of the brain. It sits at the
+          base of the brain, connecting the cerebral cortex above to the spinal cord below,
+          acting as the main highway for signals traveling between the brain and the rest of
+          the body. Without the brainstem, none of the higher brain functions would matter
+          because the body simply could not survive.
+        </p>
+        <p>
+          It is made up of three sections stacked on top of each other: the midbrain at the
+          top, the pons in the middle, and the medulla oblongata at the bottom. Each section
+          handles a different set of critical life-sustaining functions that run entirely
+          on autopilot, 24 hours a day, every day of your life.
+        </p>
+
+        <h2>Key Functions</h2>
+        <div class="function-cards">
+          <div class="func-card">
+            <span class="func-icon">💓</span>
+            <h3>Heart Rate</h3>
+            <p>The medulla regulates your heartbeat and blood pressure automatically.</p>
+          </div>
+          <div class="func-card">
+            <span class="func-icon">🫁</span>
+            <h3>Breathing</h3>
+            <p>Controls the rhythm of breathing even while you are completely unconscious.</p>
+          </div>
+          <div class="func-card">
+            <span class="func-icon">😴</span>
+            <h3>Sleep & Wake</h3>
+            <p>The reticular formation manages your sleep-wake cycle and alertness levels.</p>
+          </div>
+          <div class="func-card">
+            <span class="func-icon">🤢</span>
+            <h3>Reflexes</h3>
+            <p>Controls automatic reflexes like swallowing, coughing, sneezing, and vomiting.</p>
+          </div>
+          <div class="func-card">
+            <span class="func-icon">👁️</span>
+            <h3>Eye Movement</h3>
+            <p>The midbrain controls pupil dilation and basic eye movement reflexes.</p>
+          </div>
+          <div class="func-card">
+            <span class="func-icon">🔀</span>
+            <h3>Signal Relay</h3>
+            <p>Routes all motor and sensory signals between the brain and spinal cord.</p>
+          </div>
+        </div>
+
+        <h2>The Three Sections</h2>
+        <p>
+          The <strong style="color:var(--heading)">midbrain</strong> is the smallest and
+          uppermost section. It handles visual and auditory reflexes — like automatically
+          turning your head toward a sudden loud sound — and plays a key role in motor
+          control and dopamine production through a region called the substantia nigra.
+          Degeneration of this area is what causes Parkinson's disease.
+        </p>
+        <p>
+          The <strong style="color:var(--heading)">pons</strong> sits in the middle and
+          acts as a bridge connecting the cerebellum to the rest of the brain. It regulates
+          sleep, controls facial movements and sensations, and plays a key role in the
+          transitions between the stages of sleep — particularly REM sleep, where dreaming
+          occurs.
+        </p>
+        <p>
+          The <strong style="color:var(--heading)">medulla oblongata</strong> is the
+          lowest section and arguably the most critical for survival. It directly controls
+          heart rate, blood pressure, and breathing. Even the slightest damage to the
+          medulla can be immediately fatal.
+        </p>
+
+        <div class="did-you-know">
+          <span class="label">Did You Know</span>
+          <p>
+            Brain death is defined medically as the complete and irreversible loss of all
+            brainstem function. When the brainstem stops working, breathing and heartbeat
+            cannot be sustained without machines — even if the rest of the brain shows some
+            activity. This is why the brainstem is considered the absolute core of life itself.
+          </p>
+        </div>
+
+        <h2>What Happens When It's Damaged?</h2>
+        <p>Brainstem damage is among the most serious injuries possible:</p>
+        <ul>
+          <li>Loss of breathing and need for mechanical ventilation</li>
+          <li>Locked-in syndrome — full consciousness but complete paralysis</li>
+          <li>Coma or persistent vegetative state</li>
+          <li>Loss of ability to swallow, speak, or control facial muscles</li>
+          <li>Irregular heart rate and blood pressure instability</li>
+          <li>Complete brain death if the medulla is severely damaged</li>
+        </ul>
+
+        <!-- QUIZ -->
+        <div class="quiz-widget">
+          <div class="quiz-header">
+            <div class="quiz-icon">🧩</div>
+            <h3>Quick Check — Brainstem</h3>
+          </div>
+          <p class="quiz-question">Which part of the brainstem directly controls your heartbeat and breathing?</p>
+          <div class="quiz-options">
+            <button class="quiz-option" data-correct="false" data-letter="A">The Midbrain</button>
+            <button class="quiz-option" data-correct="false" data-letter="B">The Pons</button>
+            <button class="quiz-option" data-correct="true"  data-letter="C">The Medulla Oblongata</button>
+            <button class="quiz-option" data-correct="false" data-letter="D">The Reticular Formation</button>
+          </div>
+          <p class="quiz-feedback" id="quiz-feedback"></p>
+        </div>
+
+      </div>
+    </div>
+
+    <footer>
+      <p>The Human Brain · Interactive Neuroanatomy</p>
+    </footer>
+  </div>
+
+  <script src="../js/main.js"></script>
+  <script>
+    window.addEventListener('scroll', () => {
+      const bar = document.getElementById('progress-bar');
+      const scrolled = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+      bar.style.width = scrolled + '%';
+    });
+  </script>
+</body>
+</html>
