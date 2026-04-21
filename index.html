@@ -10,7 +10,6 @@
 
   <div id="progress-bar"></div>
 
-  <!-- NAVIGATION -->
   <nav>
     <a href="index.html" class="nav-logo">🧠 The Brain</a>
     <ul class="nav-links">
@@ -37,119 +36,194 @@
     <section class="hero">
       <p class="hero-label">Interactive Neuroanatomy</p>
       <h1>Explore the <em>Human Brain</em></h1>
-      <p>Hover over the glowing markers to preview each region, then click to explore in depth.</p>
+      <p>Hover over any glowing region to preview it, then click to explore in depth.</p>
     </section>
 
     <section class="brain-map-section">
       <div class="brain-interactive-wrapper">
         <div class="brain-image-container">
 
-          <!-- BRAIN IMAGE -->
-          <img
-            class="brain-base-image"
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Blausen_0115_BrainStructures.png/1200px-Blausen_0115_BrainStructures.png"
-            alt="Human Brain Diagram showing major regions"
-          />
+          <!-- SVG BRAIN -->
+          <svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+            <defs>
+              <radialGradient id="bgGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#4fa3e0" stop-opacity="0.07"/>
+                <stop offset="100%" stop-color="#060a10" stop-opacity="0"/>
+              </radialGradient>
+              <radialGradient id="brainBody" cx="45%" cy="45%" r="55%">
+                <stop offset="0%" stop-color="#1a2d45"/>
+                <stop offset="100%" stop-color="#0a1520"/>
+              </radialGradient>
+              <filter id="softGlow">
+                <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+                <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+              <filter id="subtleGlow">
+                <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+                <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+            </defs>
 
-          <!-- FRONTAL LOBE -->
-          <div class="hotspot" style="--spot-color:#4fa3e0; left:22%; top:28%">
+            <!-- Background atmosphere -->
+            <ellipse cx="400" cy="250" rx="380" ry="240" fill="url(#bgGlow)"/>
+
+            <!-- Brain body base -->
+            <ellipse cx="390" cy="235" rx="265" ry="195" fill="url(#brainBody)" stroke="#1e3a5a" stroke-width="1.5"/>
+
+            <!-- Brain surface folds / gyri details -->
+            <g stroke="#1e3a5a" stroke-width="1" fill="none" opacity="0.5">
+              <path d="M180,180 Q220,160 260,175 Q300,190 330,170"/>
+              <path d="M200,210 Q240,195 275,208 Q310,220 340,205"/>
+              <path d="M175,240 Q215,228 250,238 Q285,248 315,235"/>
+              <path d="M390,155 Q430,140 465,155 Q500,170 520,155"/>
+              <path d="M380,185 Q420,170 460,183 Q495,195 525,182"/>
+              <path d="M375,215 Q415,202 455,214 Q490,226 520,213"/>
+              <path d="M480,245 Q520,232 555,245 Q585,258 600,245"/>
+              <path d="M470,275 Q510,262 545,274 Q578,286 595,273"/>
+              <path d="M270,300 Q310,288 345,300 Q375,312 395,300"/>
+              <path d="M260,330 Q300,318 335,330 Q365,342 385,330"/>
+            </g>
+
+            <!-- Central sulcus line -->
+            <path d="M340,130 Q355,180 350,230 Q345,270 355,310" stroke="#2a4a6a" stroke-width="2" fill="none" opacity="0.6"/>
+
+            <!-- Lateral fissure -->
+            <path d="M195,265 Q270,255 345,270 Q400,282 440,270" stroke="#2a4a6a" stroke-width="2" fill="none" opacity="0.6"/>
+
+            <!-- FRONTAL LOBE region highlight -->
+            <ellipse cx="245" cy="200" rx="125" ry="100" fill="#4fa3e0" fill-opacity="0.08" stroke="#4fa3e0" stroke-width="1" stroke-dasharray="4,3" opacity="0.7"/>
+
+            <!-- PARIETAL LOBE region highlight -->
+            <ellipse cx="435" cy="170" rx="105" ry="75" fill="#7dd3c8" fill-opacity="0.08" stroke="#7dd3c8" stroke-width="1" stroke-dasharray="4,3" opacity="0.7"/>
+
+            <!-- OCCIPITAL LOBE region highlight -->
+            <ellipse cx="575" cy="210" rx="85" ry="75" fill="#a78bfa" fill-opacity="0.08" stroke="#a78bfa" stroke-width="1" stroke-dasharray="4,3" opacity="0.7"/>
+
+            <!-- TEMPORAL LOBE region highlight -->
+            <ellipse cx="330" cy="335" rx="110" ry="62" fill="#f59e0b" fill-opacity="0.08" stroke="#f59e0b" stroke-width="1" stroke-dasharray="4,3" opacity="0.7"/>
+
+            <!-- CEREBELLUM -->
+            <ellipse cx="555" cy="355" rx="95" ry="70" fill="#0d1e14" stroke="#1e3a28" stroke-width="1.5"/>
+            <g stroke="#1a3320" stroke-width="1" fill="none" opacity="0.6">
+              <path d="M480,345 Q510,335 540,345 Q570,355 600,345"/>
+              <path d="M478,358 Q508,348 538,358 Q568,368 598,358"/>
+              <path d="M482,371 Q512,361 542,371 Q572,381 600,371"/>
+            </g>
+            <ellipse cx="555" cy="355" rx="95" ry="70" fill="#34d399" fill-opacity="0.07" stroke="#34d399" stroke-width="1" stroke-dasharray="4,3" opacity="0.7"/>
+
+            <!-- BRAINSTEM -->
+            <rect x="415" y="370" width="65" height="90" rx="20" fill="#0d1520" stroke="#1e2d3a" stroke-width="1.5"/>
+            <rect x="415" y="370" width="65" height="90" rx="20" fill="#f87171" fill-opacity="0.07" stroke="#f87171" stroke-width="1" stroke-dasharray="4,3" opacity="0.7"/>
+
+            <!-- HIPPOCAMPUS (deeper, inner region) -->
+            <path d="M230,330 Q255,315 280,325 Q305,335 310,355 Q305,375 280,378 Q255,378 235,365 Q218,350 230,330Z" fill="#fb923c" fill-opacity="0.1" stroke="#fb923c" stroke-width="1" stroke-dasharray="3,3" opacity="0.8"/>
+
+            <!-- Brain outline border glow -->
+            <ellipse cx="390" cy="235" rx="265" ry="195" fill="none" stroke="#4fa3e0" stroke-width="0.5" opacity="0.2"/>
+
+          </svg>
+
+          <!-- HOTSPOT MARKERS overlaid on SVG -->
+
+          <!-- Frontal Lobe -->
+          <div class="hotspot" style="--spot-color:#4fa3e0; left:28%; top:36%">
             <div class="hotspot-ring">
               <div class="hotspot-dot"></div>
               <div class="hotspot-pulse"></div>
               <div class="hotspot-pulse hotspot-pulse-2"></div>
             </div>
             <div class="hotspot-card">
-              <span class="hotspot-card-tag">Region 01</span>
+              <span class="hotspot-card-tag">Region 01 · Cerebral Cortex</span>
               <h4>Frontal Lobe</h4>
               <p>Personality, decisions, planning, and motor control.</p>
               <a href="pages/frontal-lobe.html" class="hotspot-card-btn">Explore →</a>
             </div>
           </div>
 
-          <!-- PARIETAL LOBE -->
-          <div class="hotspot" style="--spot-color:#7dd3c8; left:52%; top:18%">
+          <!-- Parietal Lobe -->
+          <div class="hotspot" style="--spot-color:#7dd3c8; left:54%; top:24%">
             <div class="hotspot-ring">
               <div class="hotspot-dot"></div>
               <div class="hotspot-pulse"></div>
               <div class="hotspot-pulse hotspot-pulse-2"></div>
             </div>
             <div class="hotspot-card">
-              <span class="hotspot-card-tag">Region 02</span>
+              <span class="hotspot-card-tag">Region 02 · Cerebral Cortex</span>
               <h4>Parietal Lobe</h4>
               <p>Touch, spatial awareness, and the body's GPS system.</p>
               <a href="pages/parietal-lobe.html" class="hotspot-card-btn">Explore →</a>
             </div>
           </div>
 
-          <!-- OCCIPITAL LOBE -->
-          <div class="hotspot" style="--spot-color:#a78bfa; left:76%; top:26%">
+          <!-- Occipital Lobe -->
+          <div class="hotspot" style="--spot-color:#a78bfa; left:74%; top:34%">
             <div class="hotspot-ring">
               <div class="hotspot-dot"></div>
               <div class="hotspot-pulse"></div>
               <div class="hotspot-pulse hotspot-pulse-2"></div>
             </div>
             <div class="hotspot-card">
-              <span class="hotspot-card-tag">Region 03</span>
+              <span class="hotspot-card-tag">Region 03 · Cerebral Cortex</span>
               <h4>Occipital Lobe</h4>
               <p>Visual cortex — everything you see is processed here.</p>
               <a href="pages/occipital-lobe.html" class="hotspot-card-btn">Explore →</a>
             </div>
           </div>
 
-          <!-- TEMPORAL LOBE -->
-          <div class="hotspot" style="--spot-color:#f59e0b; left:30%; top:62%">
+          <!-- Temporal Lobe -->
+          <div class="hotspot" style="--spot-color:#f59e0b; left:38%; top:70%">
             <div class="hotspot-ring">
               <div class="hotspot-dot"></div>
               <div class="hotspot-pulse"></div>
               <div class="hotspot-pulse hotspot-pulse-2"></div>
             </div>
             <div class="hotspot-card">
-              <span class="hotspot-card-tag">Region 04</span>
+              <span class="hotspot-card-tag">Region 04 · Cerebral Cortex</span>
               <h4>Temporal Lobe</h4>
               <p>Hearing, language, memory, and face recognition.</p>
               <a href="pages/temporal-lobe.html" class="hotspot-card-btn">Explore →</a>
             </div>
           </div>
 
-          <!-- CEREBELLUM -->
-          <div class="hotspot" style="--spot-color:#34d399; left:72%; top:68%">
+          <!-- Cerebellum -->
+          <div class="hotspot" style="--spot-color:#34d399; left:70%; top:72%">
             <div class="hotspot-ring">
               <div class="hotspot-dot"></div>
               <div class="hotspot-pulse"></div>
               <div class="hotspot-pulse hotspot-pulse-2"></div>
             </div>
             <div class="hotspot-card">
-              <span class="hotspot-card-tag">Region 05</span>
+              <span class="hotspot-card-tag">Region 05 · Hindbrain</span>
               <h4>Cerebellum</h4>
               <p>Balance, coordination, and motor learning.</p>
               <a href="pages/cerebellum.html" class="hotspot-card-btn">Explore →</a>
             </div>
           </div>
 
-          <!-- BRAINSTEM -->
-          <div class="hotspot" style="--spot-color:#f87171; left:55%; top:78%">
+          <!-- Brainstem -->
+          <div class="hotspot" style="--spot-color:#f87171; left:55%; top:84%">
             <div class="hotspot-ring">
               <div class="hotspot-dot"></div>
               <div class="hotspot-pulse"></div>
               <div class="hotspot-pulse hotspot-pulse-2"></div>
             </div>
             <div class="hotspot-card">
-              <span class="hotspot-card-tag">Region 06</span>
+              <span class="hotspot-card-tag">Region 06 · Core Brain</span>
               <h4>Brainstem</h4>
               <p>Heart rate, breathing, and all life support functions.</p>
               <a href="pages/brainstem.html" class="hotspot-card-btn">Explore →</a>
             </div>
           </div>
 
-          <!-- HIPPOCAMPUS -->
-          <div class="hotspot" style="--spot-color:#fb923c; left:44%; top:55%">
+          <!-- Hippocampus -->
+          <div class="hotspot" style="--spot-color:#fb923c; left:34%; top:58%">
             <div class="hotspot-ring">
               <div class="hotspot-dot"></div>
               <div class="hotspot-pulse"></div>
               <div class="hotspot-pulse hotspot-pulse-2"></div>
             </div>
             <div class="hotspot-card">
-              <span class="hotspot-card-tag">Region 07</span>
+              <span class="hotspot-card-tag">Region 07 · Limbic System</span>
               <h4>Hippocampus</h4>
               <p>Memory formation and spatial navigation.</p>
               <a href="pages/hippocampus.html" class="hotspot-card-btn">Explore →</a>
