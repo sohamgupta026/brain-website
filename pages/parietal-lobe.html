@@ -1,1 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parietal Lobe · The Human Brain</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
 
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="../index.html" class="nav-logo">🧠 The Brain</a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <button class="theme-toggle" id="theme-btn" onclick="toggleTheme()">◑ Light</button>
+  </nav>
+
+  <div class="page">
+    <div class="content-page">
+
+      <a href="../index.html" class="back-link">Back to Brain Map</a>
+
+      <!-- HEADER -->
+      <div class="region-header">
+        <span class="region-tag" style="color:#7dd3c8">Region 02 · Cerebral Cortex</span>
+        <h1>Parietal Lobe</h1>
+        <p class="subtitle">Your brain's GPS — processing touch, space, and where your body is in the world.</p>
+      </div>
+
+      <!-- STATS -->
+      <div class="stats-row">
+        <div class="stat">
+          <span class="stat-value">~19%</span>
+          <span class="stat-label">of cortex</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">2 Areas</span>
+          <span class="stat-label">anterior + posterior</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">5 Senses</span>
+          <span class="stat-label">integration hub</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">Top-back</span>
+          <span class="stat-label">location in skull</span>
+        </div>
+      </div>
+
+      <!-- CONTENT -->
+      <div class="content-body">
+
+        <h2>What Is the Parietal Lobe?</h2>
+        <p>
+          The parietal lobe sits at the top and toward the back of the brain, sandwiched
+          between the frontal lobe at the front and the occipital lobe at the rear. It is
+          your brain's primary sensory processing center — the place where information
+          from your skin, muscles, and joints gets interpreted and turned into a coherent
+          picture of your body and the space around it.
+        </p>
+        <p>
+          It is split into two main sections. The anterior parietal lobe contains the
+          somatosensory cortex, which processes touch and body sensation. The posterior
+          parietal lobe integrates information from multiple senses to help you navigate
+          and interact with the world.
+        </p>
+
+        <h2>Key Functions</h2>
+        <div class="function-cards">
+          <div class="func-card">
+            <span class="func-icon">✋</span>
+            <h3>Touch Processing</h3>
+            <p>Interprets pain, pressure, temperature, and texture from your skin.</p>
+          </div>
+          <div class="func-card">
+            <span class="func-icon">📍</span>
+            <h3>Spatial Awareness</h3>
+            <p>Tracks where your body is in space and builds a mental map of your surroundings.</p>
+          </div>
+          <div class="func-card">
+            <span class="func-icon">🔢</span>
+            <h3>Math & Numbers</h3>
+            <p>Processes numerical information and spatial reasoning used in mathematics.</p>
+          </div>
+          <div class="func-card">
+            <span class="func-icon">🤲</span>
+            <h3>Hand-Eye Coordination</h3>
+            <p>Links what you see with where your hands are to guide movement.</p>
+          </div>
+          <div class="func-card">
+            <span class="func-icon">📖</span>
+            <h3>Reading & Writing</h3>
+            <p>Helps integrate visual and spatial information needed to read and write.</p>
+          </div>
+          <div class="func-card">
+            <span class="func-icon">🧭</span>
+            <h3>Navigation</h3>
+            <p>Works like an internal GPS to help you find your way through environments.</p>
+          </div>
+        </div>
+
+        <h2>The Somatosensory Cortex</h2>
+        <p>
+          One of the most fascinating structures in the parietal lobe is the somatosensory
+          cortex. It contains a complete map of your entire body — but the map is wildly
+          distorted. Body parts with more nerve endings, like your lips and fingertips, take
+          up far more space in the cortex than larger areas like your back or legs.
+        </p>
+        <p>
+          This distorted body map is called the cortical homunculus. If you drew a human
+          figure where each body part was sized according to how much brain space it gets,
+          you would end up with a creature with enormous hands, giant lips, and a tiny torso.
+        </p>
+
+        <div class="did-you-know">
+          <span class="label">Did You Know</span>
+          <p>
+            Your fingertips have so many nerve endings that the somatosensory cortex devotes
+            more space to processing them than it does to your entire chest and abdomen
+            combined. This is why you can read Braille with your fingers but not with your back.
+          </p>
+        </div>
+
+        <h2>What Happens When It's Damaged?</h2>
+        <p>Damage to the parietal lobe can cause:</p>
+        <ul>
+          <li>Inability to recognize objects by touch alone</li>
+          <li>Hemispatial neglect — ignoring one entire side of the world</li>
+          <li>Difficulty with math and spatial reasoning</li>
+          <li>Problems with reading, writing, and language comprehension</li>
+          <li>Loss of coordination between vision and hand movement</li>
+        </ul>
+
+        <!-- QUIZ -->
+        <div class="quiz-widget">
+          <h3>Quick Check — Parietal Lobe</h3>
+          <p class="quiz-question">What is the name of the distorted body map found in the parietal lobe?</p>
+          <div class="quiz-options">
+            <button class="quiz-option" data-correct="false">The Sensory Atlas</button>
+            <button class="quiz-option" data-correct="false">The Neural Map</button>
+            <button class="quiz-option" data-correct="true">The Cortical Homunculus</button>
+            <button class="quiz-option" data-correct="false">The Somatosensory Grid</button>
+          </div>
+          <p class="quiz-feedback" id="quiz-feedback"></p>
+        </div>
+
+      </div>
+    </div>
+
+    <footer>
+      <p>The Human Brain · Interactive Neuroanatomy</p>
+    </footer>
+  </div>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
