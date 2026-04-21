@@ -1,1 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cerebellum · The Human Brain</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    :root { --region-color: #34d399; }
 
+    .region-banner {
+      background: linear-gradient(135deg, #0d1520 0%, #001a10 100%);
+    }
+
+    .region-banner-bg {
+      background: radial-gradient(ellipse at 30% 50%, rgba(52,211,153,0.25) 0%, transparent 70%),
+                  radial-gradient(ellipse at 80% 20%, rgba(52,211,153,0.1) 0%, transparent 60%);
+    }
+
+    .stat-value { color: #34d399; }
+  </style>
+</head>
+<body>
+
+  <div id="progress-bar"></div>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="../index.html" class="nav-logo">🧠 The Brain</a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <button class="theme-toggle" id="theme-btn" onclick="toggleTheme()">◑ Light</button>
+  </nav>
+
+  <div class="page">
+
+    <!-- BANNER -->
+    <div class="region-banner">
+      <div class="region-banner-bg"></div>
+      <div class="region-banner-grid"></div>
+      <div class="region-banner-content">
+        <div class="region-number" style="color:#34d399">Region 05 · Hindbrain</div>
+        <h1>Cerebellum</h1>
+        <p class="subtitle">The brain's autopilot — coordinating every movement you make without thinking.</p>
+      </div>
+    </div>
+
+    <div class="content-page">
+
+      <a href="../index.html" class="back-link">Back to Brain Map</a>
+
+      <!-- STATS -->
+      <div class="stats-row">
+        <div class="stat">
+          <span class="stat-value">10%</span>
+          <span class="stat-label">of brain volume</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">50%+</span>
+          <span class="stat-label">of all neurons</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">2 Halves</span>
+          <span class="stat-label">left + right</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">Rear-low</span>
+          <span class="stat-label">base of skull</span>
+        </div>
+      </div>
+
+      <!-- CONTENT -->
+      <div class="content-body">
+
+        <h2>What Is the Cerebellum?</h2>
+        <p>
+          The cerebellum — Latin for "little brain" — sits at the back and bottom of the
+          brain, tucked beneath the cerebral cortex. Despite making up only about 10% of
+          the brain's total volume, it contains more than half of all the neurons in your
+          entire brain. That density hints at just how much processing work it quietly handles
+          in the background.
+        </p>
+        <p>
+          Unlike the cerebral cortex which makes conscious decisions, the cerebellum works
+          automatically and below the level of awareness. It receives information from your
+          muscles, joints, and balance organs, then fine-tunes your movements in real time
+          to make them smooth, accurate, and coordinated.
+        </p>
+
+        <h2>Key Functions</h2>
+        <div class="function-cards">
+          <div class="func-card">
+            <span class="func-icon">⚖️</span>
+            <h3>Balance</h3>
+            <p>Constantly adjusts your posture to keep you upright and stable.</p>
+          </div>
+          <div class="func-card">
+            <span class="func-icon">🎯</span>
+            <h3>Coordination</h3>
+            <p>Synchronizes muscle groups so your movements are smooth and precise.</p>
+          </div>
+          <div class="func-card">
+            <span class="func-icon">🏋️</span>
+            <h3>Motor Learning</h3>
+            <p>Stores learned movement patterns like riding a bike or typing.</p>
+          </div>
+          <div class="func-card">
+            <span class="func-icon">⏱️</span>
+            <h3>Timing</h3>
+            <p>Controls the precise timing and rhythm of movements and actions.</p>
+          </div>
+          <div class="func-card">
+            <span class="func-icon">👁️</span>
+            <h3>Eye Movement</h3>
+            <p>Coordinates smooth eye tracking and keeps your vision stable.</p>
+          </div>
+          <div class="func-card">
+            <span class="func-icon">🗣️</span>
+            <h3>Speech Rhythm</h3>
+            <p>Controls the timing and coordination of muscles used in speaking.</p>
+          </div>
+        </div>
+
+        <h2>More Neurons Than the Rest of the Brain Combined</h2>
+        <p>
+          One of the most remarkable facts about the cerebellum is its neuron density. It
+          contains around 69 billion neurons — mostly a type called granule cells — compared
+          to roughly 16 billion in the cerebral cortex. These neurons are packed into a
+          tightly folded structure that, if unfolded, would stretch out to roughly the size
+          of a full sheet of paper.
+        </p>
+        <p>
+          This massive neural network allows the cerebellum to make thousands of tiny
+          real-time corrections every second. When you reach for a glass of water, it is
+          the cerebellum — not your conscious mind — that makes sure your hand moves at
+          exactly the right speed and stops precisely when it should.
+        </p>
+
+        <div class="did-you-know">
+          <span class="label">Did You Know</span>
+          <p>
+            In 1996, a woman was discovered to have been living her entire life without a
+            cerebellum — a condition called cerebellar agenesis. She had no idea until she
+            was 24 years old. She could walk and talk, though with difficulty. Her case
+            showed how remarkably the rest of the brain can compensate, and raised major
+            questions about everything scientists thought they knew about the cerebellum.
+          </p>
+        </div>
+
+        <h2>What Happens When It's Damaged?</h2>
+        <p>Damage to the cerebellum does not cause paralysis, but it severely disrupts coordination:</p>
+        <ul>
+          <li>Ataxia — wide, unsteady, lurching gait when walking</li>
+          <li>Tremors that appear during intentional movement</li>
+          <li>Slurred and irregular speech</li>
+          <li>Difficulty with fine motor tasks like writing or buttoning a shirt</li>
+          <li>Abnormal eye movements and dizziness</li>
+          <li>Problems with balance even when standing still</li>
+        </ul>
+
+        <!-- QUIZ -->
+        <div class="quiz-widget">
+          <div class="quiz-header">
+            <div class="quiz-icon">🧩</div>
+            <h3>Quick Check — Cerebellum</h3>
+          </div>
+          <p class="quiz-question">Despite being only 10% of brain volume, what percentage of the brain's neurons does the cerebellum contain?</p>
+          <div class="quiz-options">
+            <button class="quiz-option" data-correct="false" data-letter="A">About 10% — the same as its size</button>
+            <button class="quiz-option" data-correct="false" data-letter="B">About 25% of all neurons</button>
+            <button class="quiz-option" data-correct="true"  data-letter="C">More than 50% of all neurons</button>
+            <button class="quiz-option" data-correct="false" data-letter="D">About 35% of all neurons</button>
+          </div>
+          <p class="quiz-feedback" id="quiz-feedback"></p>
+        </div>
+
+      </div>
+    </div>
+
+    <footer>
+      <p>The Human Brain · Interactive Neuroanatomy</p>
+    </footer>
+  </div>
+
+  <script src="../js/main.js"></script>
+  <script>
+    window.addEventListener('scroll', () => {
+      const bar = document.getElementById('progress-bar');
+      const scrolled = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+      bar.style.width = scrolled + '%';
+    });
+  </script>
+</body>
+</html>
