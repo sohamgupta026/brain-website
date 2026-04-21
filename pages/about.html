@@ -168,8 +168,7 @@
 
   <div id="progress-bar"></div>
 
-  <!-- NAVIGATION -->
- <nav>
+  <nav>
     <a href="../index.html" class="nav-logo">🧠 The Brain</a>
     <ul class="nav-links">
       <li><a href="../index.html">Home</a></li>
@@ -185,12 +184,13 @@
           <a href="hippocampus.html"><span class="dropdown-dot" style="background:#fb923c"></span>Hippocampus</a>
         </div>
       </li>
-      <li><a href="about.html">About</a></li>
+      <li><a href="about.html" class="active">About</a></li>
     </ul>
     <button class="theme-toggle" id="theme-btn" onclick="toggleTheme()">◑ Slate</button>
-</nav>
+  </nav>
 
-    <!-- BANNER -->
+  <div class="page">
+
     <div class="region-banner about-banner">
       <div class="region-banner-bg about-banner-bg"></div>
       <div class="region-banner-grid"></div>
@@ -205,23 +205,11 @@
 
       <a href="../index.html" class="back-link">Back to Brain Map</a>
 
-      <!-- CONTENT -->
       <div class="content-body">
 
         <h2>What Is This Site?</h2>
-        <p>
-          This is an interactive neuroanatomy guide built to make learning about the human
-          brain visual, engaging, and accessible. Instead of reading a flat textbook, you
-          can click directly on the brain regions that interest you and explore each one
-          through detailed descriptions, key functions, real-world cases, and a quick quiz
-          to test your understanding.
-        </p>
-        <p>
-          The brain is the most complex structure ever discovered in the known universe.
-          It contains roughly 86 billion neurons, each forming thousands of connections,
-          creating a network more intricate than any computer ever built. This site is
-          a starting point for exploring that complexity — one region at a time.
-        </p>
+        <p>This is an interactive neuroanatomy guide built to make learning about the human brain visual, engaging, and accessible. Instead of reading a flat textbook, you can click directly on the brain regions that interest you and explore each one through detailed descriptions, key functions, real-world cases, and a quick quiz to test your understanding.</p>
+        <p>The brain is the most complex structure ever discovered in the known universe. It contains roughly 86 billion neurons, each forming thousands of connections, creating a network more intricate than any computer ever built. This site is a starting point for exploring that complexity — one region at a time.</p>
 
         <h2>Quick Brain Facts</h2>
         <div class="facts-grid">
@@ -275,17 +263,17 @@
             <span>Temporal Lobe</span>
             <span class="region-link-arrow">→</span>
           </a>
-          <a href="cerebellum.html"    class="region-link-card" style="--link-color:#34d399">
+          <a href="cerebellum.html" class="region-link-card" style="--link-color:#34d399">
             <span class="region-link-dot" style="background:#34d399"></span>
             <span>Cerebellum</span>
             <span class="region-link-arrow">→</span>
           </a>
-          <a href="brainstem.html"     class="region-link-card" style="--link-color:#f87171">
+          <a href="brainstem.html" class="region-link-card" style="--link-color:#f87171">
             <span class="region-link-dot" style="background:#f87171"></span>
             <span>Brainstem</span>
             <span class="region-link-arrow">→</span>
           </a>
-          <a href="hippocampus.html"   class="region-link-card" style="--link-color:#fb923c">
+          <a href="hippocampus.html" class="region-link-card" style="--link-color:#fb923c">
             <span class="region-link-dot" style="background:#fb923c"></span>
             <span>Hippocampus</span>
             <span class="region-link-arrow">→</span>
@@ -318,14 +306,7 @@
 
         <div class="did-you-know">
           <span class="label">Why Neuroscience Matters</span>
-          <p>
-            Neurological and psychiatric conditions affect more than one billion people
-            worldwide. Understanding how the brain works — and what happens when it doesn't —
-            is one of the most important frontiers in modern medicine, psychology, and
-            artificial intelligence. Every region on this site represents decades of research,
-            thousands of patients, and some of the most remarkable scientific discoveries
-            in human history.
-          </p>
+          <p>Neurological and psychiatric conditions affect more than one billion people worldwide. Understanding how the brain works — and what happens when it doesn't — is one of the most important frontiers in modern medicine, psychology, and artificial intelligence. Every region on this site represents decades of research, thousands of patients, and some of the most remarkable scientific discoveries in human history.</p>
         </div>
 
       </div>
@@ -334,6 +315,7 @@
     <footer>
       <p>The Human Brain · Interactive Neuroanatomy · Built for Science Class</p>
     </footer>
+
   </div>
 
   <script src="../js/main.js"></script>
