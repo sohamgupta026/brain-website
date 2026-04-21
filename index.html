@@ -43,7 +43,7 @@
       <div class="brain-interactive-wrapper">
         <div class="brain-image-container">
 
-          <!-- SVG BRAIN -->
+          <!-- SVG BRAIN with permanent labels -->
           <svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
             <defs>
               <radialGradient id="bgGlow" cx="50%" cy="50%" r="50%">
@@ -58,10 +58,6 @@
                 <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
                 <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
               </filter>
-              <filter id="subtleGlow">
-                <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
-                <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
-              </filter>
             </defs>
 
             <!-- Background atmosphere -->
@@ -70,7 +66,7 @@
             <!-- Brain body base -->
             <ellipse cx="390" cy="235" rx="265" ry="195" fill="url(#brainBody)" stroke="#1e3a5a" stroke-width="1.5"/>
 
-            <!-- Brain surface folds / gyri details -->
+            <!-- Brain surface folds -->
             <g stroke="#1e3a5a" stroke-width="1" fill="none" opacity="0.5">
               <path d="M180,180 Q220,160 260,175 Q300,190 330,170"/>
               <path d="M200,210 Q240,195 275,208 Q310,220 340,205"/>
@@ -84,23 +80,29 @@
               <path d="M260,330 Q300,318 335,330 Q365,342 385,330"/>
             </g>
 
-            <!-- Central sulcus line -->
+            <!-- Sulcus lines -->
             <path d="M340,130 Q355,180 350,230 Q345,270 355,310" stroke="#2a4a6a" stroke-width="2" fill="none" opacity="0.6"/>
-
-            <!-- Lateral fissure -->
             <path d="M195,265 Q270,255 345,270 Q400,282 440,270" stroke="#2a4a6a" stroke-width="2" fill="none" opacity="0.6"/>
 
-            <!-- FRONTAL LOBE region highlight -->
-            <ellipse cx="245" cy="200" rx="125" ry="100" fill="#4fa3e0" fill-opacity="0.08" stroke="#4fa3e0" stroke-width="1" stroke-dasharray="4,3" opacity="0.7"/>
+            <!-- FRONTAL LOBE -->
+            <ellipse cx="245" cy="200" rx="125" ry="100" fill="#4fa3e0" fill-opacity="0.1" stroke="#4fa3e0" stroke-width="1.5" stroke-dasharray="5,3"/>
+            <text x="245" y="193" text-anchor="middle" fill="#4fa3e0" font-family="Space Mono, monospace" font-size="12" font-weight="700" filter="url(#softGlow)">FRONTAL</text>
+            <text x="245" y="209" text-anchor="middle" fill="#4fa3e0" font-family="Space Mono, monospace" font-size="12" font-weight="700" filter="url(#softGlow)">LOBE</text>
 
-            <!-- PARIETAL LOBE region highlight -->
-            <ellipse cx="435" cy="170" rx="105" ry="75" fill="#7dd3c8" fill-opacity="0.08" stroke="#7dd3c8" stroke-width="1" stroke-dasharray="4,3" opacity="0.7"/>
+            <!-- PARIETAL LOBE -->
+            <ellipse cx="435" cy="170" rx="105" ry="75" fill="#7dd3c8" fill-opacity="0.1" stroke="#7dd3c8" stroke-width="1.5" stroke-dasharray="5,3"/>
+            <text x="435" y="163" text-anchor="middle" fill="#7dd3c8" font-family="Space Mono, monospace" font-size="12" font-weight="700" filter="url(#softGlow)">PARIETAL</text>
+            <text x="435" y="179" text-anchor="middle" fill="#7dd3c8" font-family="Space Mono, monospace" font-size="12" font-weight="700" filter="url(#softGlow)">LOBE</text>
 
-            <!-- OCCIPITAL LOBE region highlight -->
-            <ellipse cx="575" cy="210" rx="85" ry="75" fill="#a78bfa" fill-opacity="0.08" stroke="#a78bfa" stroke-width="1" stroke-dasharray="4,3" opacity="0.7"/>
+            <!-- OCCIPITAL LOBE -->
+            <ellipse cx="575" cy="210" rx="85" ry="75" fill="#a78bfa" fill-opacity="0.1" stroke="#a78bfa" stroke-width="1.5" stroke-dasharray="5,3"/>
+            <text x="575" y="203" text-anchor="middle" fill="#a78bfa" font-family="Space Mono, monospace" font-size="12" font-weight="700" filter="url(#softGlow)">OCCIPITAL</text>
+            <text x="575" y="219" text-anchor="middle" fill="#a78bfa" font-family="Space Mono, monospace" font-size="12" font-weight="700" filter="url(#softGlow)">LOBE</text>
 
-            <!-- TEMPORAL LOBE region highlight -->
-            <ellipse cx="330" cy="335" rx="110" ry="62" fill="#f59e0b" fill-opacity="0.08" stroke="#f59e0b" stroke-width="1" stroke-dasharray="4,3" opacity="0.7"/>
+            <!-- TEMPORAL LOBE -->
+            <ellipse cx="330" cy="335" rx="110" ry="62" fill="#f59e0b" fill-opacity="0.1" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="5,3"/>
+            <text x="330" y="328" text-anchor="middle" fill="#f59e0b" font-family="Space Mono, monospace" font-size="12" font-weight="700" filter="url(#softGlow)">TEMPORAL</text>
+            <text x="330" y="344" text-anchor="middle" fill="#f59e0b" font-family="Space Mono, monospace" font-size="12" font-weight="700" filter="url(#softGlow)">LOBE</text>
 
             <!-- CEREBELLUM -->
             <ellipse cx="555" cy="355" rx="95" ry="70" fill="#0d1e14" stroke="#1e3a28" stroke-width="1.5"/>
@@ -109,21 +111,26 @@
               <path d="M478,358 Q508,348 538,358 Q568,368 598,358"/>
               <path d="M482,371 Q512,361 542,371 Q572,381 600,371"/>
             </g>
-            <ellipse cx="555" cy="355" rx="95" ry="70" fill="#34d399" fill-opacity="0.07" stroke="#34d399" stroke-width="1" stroke-dasharray="4,3" opacity="0.7"/>
+            <ellipse cx="555" cy="355" rx="95" ry="70" fill="#34d399" fill-opacity="0.1" stroke="#34d399" stroke-width="1.5" stroke-dasharray="5,3"/>
+            <text x="555" y="349" text-anchor="middle" fill="#34d399" font-family="Space Mono, monospace" font-size="12" font-weight="700" filter="url(#softGlow)">CEREBELLUM</text>
 
             <!-- BRAINSTEM -->
             <rect x="415" y="370" width="65" height="90" rx="20" fill="#0d1520" stroke="#1e2d3a" stroke-width="1.5"/>
-            <rect x="415" y="370" width="65" height="90" rx="20" fill="#f87171" fill-opacity="0.07" stroke="#f87171" stroke-width="1" stroke-dasharray="4,3" opacity="0.7"/>
+            <rect x="415" y="370" width="65" height="90" rx="20" fill="#f87171" fill-opacity="0.1" stroke="#f87171" stroke-width="1.5" stroke-dasharray="5,3"/>
+            <text x="448" y="408" text-anchor="middle" fill="#f87171" font-family="Space Mono, monospace" font-size="10" font-weight="700" filter="url(#softGlow)">BRAIN</text>
+            <text x="448" y="422" text-anchor="middle" fill="#f87171" font-family="Space Mono, monospace" font-size="10" font-weight="700" filter="url(#softGlow)">STEM</text>
 
-            <!-- HIPPOCAMPUS (deeper, inner region) -->
-            <path d="M230,330 Q255,315 280,325 Q305,335 310,355 Q305,375 280,378 Q255,378 235,365 Q218,350 230,330Z" fill="#fb923c" fill-opacity="0.1" stroke="#fb923c" stroke-width="1" stroke-dasharray="3,3" opacity="0.8"/>
+            <!-- HIPPOCAMPUS -->
+            <path d="M230,330 Q255,315 280,325 Q305,335 310,355 Q305,375 280,378 Q255,378 235,365 Q218,350 230,330Z" fill="#fb923c" fill-opacity="0.12" stroke="#fb923c" stroke-width="1.5" stroke-dasharray="3,3"/>
+            <text x="268" y="342" text-anchor="middle" fill="#fb923c" font-family="Space Mono, monospace" font-size="9" font-weight="700" filter="url(#softGlow)">HIPPO-</text>
+            <text x="268" y="355" text-anchor="middle" fill="#fb923c" font-family="Space Mono, monospace" font-size="9" font-weight="700" filter="url(#softGlow)">CAMPUS</text>
 
-            <!-- Brain outline border glow -->
+            <!-- Brain outline glow -->
             <ellipse cx="390" cy="235" rx="265" ry="195" fill="none" stroke="#4fa3e0" stroke-width="0.5" opacity="0.2"/>
 
           </svg>
 
-          <!-- HOTSPOT MARKERS overlaid on SVG -->
+          <!-- HOTSPOT MARKERS -->
 
           <!-- Frontal Lobe -->
           <div class="hotspot" style="--spot-color:#4fa3e0; left:28%; top:36%">
@@ -171,7 +178,7 @@
           </div>
 
           <!-- Temporal Lobe -->
-          <div class="hotspot" style="--spot-color:#f59e0b; left:38%; top:70%">
+          <div class="hotspot" style="--spot-color:#f59e0b; left:40%; top:70%">
             <div class="hotspot-ring">
               <div class="hotspot-dot"></div>
               <div class="hotspot-pulse"></div>
@@ -201,7 +208,7 @@
           </div>
 
           <!-- Brainstem -->
-          <div class="hotspot" style="--spot-color:#f87171; left:55%; top:84%">
+          <div class="hotspot" style="--spot-color:#f87171; left:57%; top:86%">
             <div class="hotspot-ring">
               <div class="hotspot-dot"></div>
               <div class="hotspot-pulse"></div>
@@ -216,7 +223,7 @@
           </div>
 
           <!-- Hippocampus -->
-          <div class="hotspot" style="--spot-color:#fb923c; left:34%; top:58%">
+          <div class="hotspot" style="--spot-color:#fb923c; left:32%; top:60%">
             <div class="hotspot-ring">
               <div class="hotspot-dot"></div>
               <div class="hotspot-pulse"></div>
