@@ -5,10 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Frontal Lobe · The Human Brain</title>
   <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    :root { --region-color: #4fa3e0; }
+    .region-banner { background: linear-gradient(135deg, #0d1520 0%, #001428 100%); }
+    .region-banner-bg {
+      background: radial-gradient(ellipse at 30% 50%, rgba(79,163,224,0.25) 0%, transparent 70%),
+                  radial-gradient(ellipse at 80% 20%, rgba(79,163,224,0.1) 0%, transparent 60%);
+    }
+    .stat-value { color: #4fa3e0; }
+  </style>
 </head>
 <body>
 
-  <!-- NAVIGATION -->
+  <div id="progress-bar"></div>
+
   <nav>
     <a href="../index.html" class="nav-logo">🧠 The Brain</a>
     <ul class="nav-links">
@@ -19,46 +29,89 @@
   </nav>
 
   <div class="page">
-    <div class="content-page">
 
-      <a href="../index.html" class="back-link">Back to Brain Map</a>
-
-      <!-- HEADER -->
-      <div class="region-header">
-        <span class="region-tag" style="color:#4fa3e0">Region 01 · Cerebral Cortex</span>
+    <div class="region-banner">
+      <div class="region-banner-bg"></div>
+      <div class="region-banner-grid"></div>
+      <div class="region-banner-content">
+        <div class="region-number" style="color:#4fa3e0">Region 01 · Cerebral Cortex</div>
         <h1>Frontal Lobe</h1>
         <p class="subtitle">The seat of personality, decision-making, and what makes us human.</p>
       </div>
+    </div>
 
-      <!-- STATS -->
+    <div class="content-page">
+      <a href="../index.html" class="back-link">Back to Brain Map</a>
+
       <div class="stats-row">
-        <div class="stat">
-          <span class="stat-value">~30%</span>
-          <span class="stat-label">of cortex</span>
-        </div>
-        <div class="stat">
-          <span class="stat-value">Left + Right</span>
-          <span class="stat-label">hemispheres</span>
-        </div>
-        <div class="stat">
-          <span class="stat-value">100B+</span>
-          <span class="stat-label">neurons total</span>
-        </div>
-        <div class="stat">
-          <span class="stat-value">25 yrs</span>
-          <span class="stat-label">fully developed</span>
-        </div>
+        <div class="stat"><span class="stat-value">~30%</span><span class="stat-label">of cortex</span></div>
+        <div class="stat"><span class="stat-value">Left + Right</span><span class="stat-label">hemispheres</span></div>
+        <div class="stat"><span class="stat-value">100B+</span><span class="stat-label">neurons total</span></div>
+        <div class="stat"><span class="stat-value">25 yrs</span><span class="stat-label">fully developed</span></div>
       </div>
 
-      <!-- CONTENT -->
       <div class="content-body">
 
         <h2>What Is the Frontal Lobe?</h2>
-        <p>
-          The frontal lobe is the largest of the four lobes of the cerebral cortex and sits
-          directly behind your forehead. It is the most recently evolved part of the human brain
-          and is largely responsible for the traits we consider uniquely human — reasoning,
-          planning, creativity, and social behavior.
-        </p>
-        <p>
-          It is divided into several key areas, each handling a different job. Th
+        <p>The frontal lobe is the largest of the four lobes of the cerebral cortex and sits directly behind your forehead. It is the most recently evolved part of the human brain and is largely responsible for the traits we consider uniquely human — reasoning, planning, creativity, and social behavior.</p>
+        <p>It is divided into several key areas, each handling a different job. The prefrontal cortex at the very front handles high-level thinking. The motor cortex along the back edge controls voluntary movement. Together they make the frontal lobe one of the most complex and important structures in the brain.</p>
+
+        <h2>Key Functions</h2>
+        <div class="function-cards">
+          <div class="func-card"><span class="func-icon">🧩</span><h3>Decision Making</h3><p>Weighs consequences and helps you choose between options.</p></div>
+          <div class="func-card"><span class="func-icon">💬</span><h3>Speech & Language</h3><p>Broca's area controls your ability to produce spoken language.</p></div>
+          <div class="func-card"><span class="func-icon">🏃</span><h3>Motor Control</h3><p>The motor cortex sends signals that control voluntary movement.</p></div>
+          <div class="func-card"><span class="func-icon">🎭</span><h3>Personality</h3><p>Shapes your character, social behavior, and emotional responses.</p></div>
+          <div class="func-card"><span class="func-icon">📋</span><h3>Planning</h3><p>Organizes thoughts and actions toward future goals.</p></div>
+          <div class="func-card"><span class="func-icon">🚦</span><h3>Impulse Control</h3><p>Helps suppress inappropriate behaviors and reactions.</p></div>
+        </div>
+
+        <h2>Why Does It Take So Long to Develop?</h2>
+        <p>The frontal lobe is the last part of the brain to fully mature, not finishing development until around age 25. This is why teenagers are more likely to take risks, act impulsively, and struggle with long-term planning — their frontal lobe is literally still under construction.</p>
+        <p>This slow development is actually a feature, not a bug. The extended period of plasticity allows the brain to adapt to complex social environments, learn from experience, and fine-tune decision-making based on years of real-world feedback.</p>
+
+        <div class="did-you-know">
+          <span class="label">Did You Know</span>
+          <p>In 1848, a railroad worker named Phineas Gage survived an iron rod being blasted through his frontal lobe. He lived — but his personality changed so dramatically that friends said he was "no longer Gage." His case became one of the first clues that the frontal lobe controls personality.</p>
+        </div>
+
+        <h2>What Happens When It's Damaged?</h2>
+        <ul>
+          <li>Dramatic personality changes</li>
+          <li>Loss of impulse control and social inappropriateness</li>
+          <li>Difficulty with planning and problem solving</li>
+          <li>Speech and language problems if Broca's area is affected</li>
+          <li>Paralysis or weakness on one side of the body</li>
+        </ul>
+
+        <div class="quiz-widget">
+          <div class="quiz-header">
+            <div class="quiz-icon">🧩</div>
+            <h3>Quick Check — Frontal Lobe</h3>
+          </div>
+          <p class="quiz-question">Which area of the frontal lobe is responsible for producing speech?</p>
+          <div class="quiz-options">
+            <button class="quiz-option" data-correct="false" data-letter="A">Wernicke's Area</button>
+            <button class="quiz-option" data-correct="true"  data-letter="B">Broca's Area</button>
+            <button class="quiz-option" data-correct="false" data-letter="C">The Motor Cortex</button>
+            <button class="quiz-option" data-correct="false" data-letter="D">The Prefrontal Cortex</button>
+          </div>
+          <p class="quiz-feedback" id="quiz-feedback"></p>
+        </div>
+
+      </div>
+    </div>
+
+    <footer><p>The Human Brain · Interactive Neuroanatomy</p></footer>
+  </div>
+
+  <script src="../js/main.js"></script>
+  <script>
+    window.addEventListener('scroll', () => {
+      const bar = document.getElementById('progress-bar');
+      const scrolled = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+      bar.style.width = scrolled + '%';
+    });
+  </script>
+</body>
+</html>
