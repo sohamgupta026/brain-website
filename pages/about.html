@@ -17,6 +17,17 @@
                   radial-gradient(ellipse at 80% 20%, rgba(79,163,224,0.1) 0%, transparent 60%);
     }
 
+    .brain-diagram-img {
+      width: 100%;
+      max-width: 600px;
+      display: block;
+      margin: 0 auto 2.5rem;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      opacity: 0.85;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.4);
+    }
+
     .region-links {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -181,150 +192,4 @@
           <a href="temporal-lobe.html"><span class="dropdown-dot" style="background:#f59e0b"></span>Temporal Lobe</a>
           <a href="cerebellum.html"><span class="dropdown-dot" style="background:#34d399"></span>Cerebellum</a>
           <a href="brainstem.html"><span class="dropdown-dot" style="background:#f87171"></span>Brainstem</a>
-          <a href="hippocampus.html"><span class="dropdown-dot" style="background:#fb923c"></span>Hippocampus</a>
-        </div>
-      </li>
-      <li><a href="about.html" class="active">About</a></li>
-    </ul>
-    <button class="theme-toggle" id="theme-btn" onclick="toggleTheme()">◑ Slate</button>
-  </nav>
-
-  <div class="page">
-
-    <div class="region-banner about-banner">
-      <div class="region-banner-bg about-banner-bg"></div>
-      <div class="region-banner-grid"></div>
-      <div class="region-banner-content">
-        <div class="region-number" style="color:#7dd3c8">Interactive Neuroanatomy</div>
-        <h1>About This Site</h1>
-        <p class="subtitle">An interactive guide to the most complex object in the known universe.</p>
-      </div>
-    </div>
-
-    <div class="content-page">
-
-      <a href="../index.html" class="back-link">Back to Brain Map</a>
-
-      <div class="content-body">
-
-        <h2>What Is This Site?</h2>
-        <p>This is an interactive neuroanatomy guide built to make learning about the human brain visual, engaging, and accessible. Instead of reading a flat textbook, you can click directly on the brain regions that interest you and explore each one through detailed descriptions, key functions, real-world cases, and a quick quiz to test your understanding.</p>
-        <p>The brain is the most complex structure ever discovered in the known universe. It contains roughly 86 billion neurons, each forming thousands of connections, creating a network more intricate than any computer ever built. This site is a starting point for exploring that complexity — one region at a time.</p>
-
-        <h2>Quick Brain Facts</h2>
-        <div class="facts-grid">
-          <div class="fact-item">
-            <span class="fact-number">86B</span>
-            <span class="fact-label">neurons in the human brain</span>
-          </div>
-          <div class="fact-item">
-            <span class="fact-number">100T</span>
-            <span class="fact-label">synaptic connections</span>
-          </div>
-          <div class="fact-item">
-            <span class="fact-number">~1.4kg</span>
-            <span class="fact-label">average brain weight</span>
-          </div>
-          <div class="fact-item">
-            <span class="fact-number">20%</span>
-            <span class="fact-label">of body's energy used</span>
-          </div>
-          <div class="fact-item">
-            <span class="fact-number">120m/s</span>
-            <span class="fact-label">nerve signal speed</span>
-          </div>
-          <div class="fact-item">
-            <span class="fact-number">25 yrs</span>
-            <span class="fact-label">to fully develop</span>
-          </div>
-        </div>
-
-        <h2>Regions Covered</h2>
-        <p>This site covers seven major brain regions. Click any of them to explore:</p>
-
-        <div class="region-links">
-          <a href="frontal-lobe.html"  class="region-link-card" style="--link-color:#4fa3e0">
-            <span class="region-link-dot" style="background:#4fa3e0"></span>
-            <span>Frontal Lobe</span>
-            <span class="region-link-arrow">→</span>
-          </a>
-          <a href="parietal-lobe.html" class="region-link-card" style="--link-color:#7dd3c8">
-            <span class="region-link-dot" style="background:#7dd3c8"></span>
-            <span>Parietal Lobe</span>
-            <span class="region-link-arrow">→</span>
-          </a>
-          <a href="occipital-lobe.html" class="region-link-card" style="--link-color:#a78bfa">
-            <span class="region-link-dot" style="background:#a78bfa"></span>
-            <span>Occipital Lobe</span>
-            <span class="region-link-arrow">→</span>
-          </a>
-          <a href="temporal-lobe.html" class="region-link-card" style="--link-color:#f59e0b">
-            <span class="region-link-dot" style="background:#f59e0b"></span>
-            <span>Temporal Lobe</span>
-            <span class="region-link-arrow">→</span>
-          </a>
-          <a href="cerebellum.html" class="region-link-card" style="--link-color:#34d399">
-            <span class="region-link-dot" style="background:#34d399"></span>
-            <span>Cerebellum</span>
-            <span class="region-link-arrow">→</span>
-          </a>
-          <a href="brainstem.html" class="region-link-card" style="--link-color:#f87171">
-            <span class="region-link-dot" style="background:#f87171"></span>
-            <span>Brainstem</span>
-            <span class="region-link-arrow">→</span>
-          </a>
-          <a href="hippocampus.html" class="region-link-card" style="--link-color:#fb923c">
-            <span class="region-link-dot" style="background:#fb923c"></span>
-            <span>Hippocampus</span>
-            <span class="region-link-arrow">→</span>
-          </a>
-        </div>
-
-        <h2>How to Use This Site</h2>
-        <div class="how-to-grid">
-          <div class="how-to-card">
-            <span class="how-to-number">01</span>
-            <h3>Explore the Map</h3>
-            <p>Go to the home page and hover over the brain diagram to see each region light up.</p>
-          </div>
-          <div class="how-to-card">
-            <span class="how-to-number">02</span>
-            <h3>Click a Region</h3>
-            <p>Click any glowing area on the brain or use the legend below the diagram to navigate.</p>
-          </div>
-          <div class="how-to-card">
-            <span class="how-to-number">03</span>
-            <h3>Read and Learn</h3>
-            <p>Each page covers what the region is, what it does, and real case studies.</p>
-          </div>
-          <div class="how-to-card">
-            <span class="how-to-number">04</span>
-            <h3>Test Yourself</h3>
-            <p>Try the quick quiz at the bottom of each page to check your understanding.</p>
-          </div>
-        </div>
-
-        <div class="did-you-know">
-          <span class="label">Why Neuroscience Matters</span>
-          <p>Neurological and psychiatric conditions affect more than one billion people worldwide. Understanding how the brain works — and what happens when it doesn't — is one of the most important frontiers in modern medicine, psychology, and artificial intelligence. Every region on this site represents decades of research, thousands of patients, and some of the most remarkable scientific discoveries in human history.</p>
-        </div>
-
-      </div>
-    </div>
-
-    <footer>
-      <p>The Human Brain · Interactive Neuroanatomy · Built for Science Class</p>
-    </footer>
-
-  </div>
-
-  <script src="../js/main.js"></script>
-  <script>
-    window.addEventListener('scroll', () => {
-      const bar = document.getElementById('progress-bar');
-      const scrolled = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
-      bar.style.width = scrolled + '%';
-    });
-  </script>
-</body>
-</html>
+          <a href="hippocampus.html"><span class="dropdown-dot" style="background:#fb923c"></span>Hippoc
