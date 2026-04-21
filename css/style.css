@@ -25,6 +25,9 @@ body {
   font-size: 18px;
   line-height: 1.7;
   min-height: 100vh;
+  background-image:
+    radial-gradient(ellipse at 20% 50%, rgba(79,163,224,0.04) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(125,211,200,0.04) 0%, transparent 60%);
 }
 
 /* ── SCROLLBAR ── */
@@ -58,6 +61,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  transition: background 0.3s, border-color 0.3s;
 }
 
 .nav-logo {
@@ -122,6 +126,12 @@ nav {
 .page {
   padding-top: 62px;
   min-height: 100vh;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity:0; transform:translateY(6px); }
+  to   { opacity:1; transform:translateY(0); }
 }
 
 /* ── HERO ── */
@@ -190,27 +200,24 @@ nav {
   filter: drop-shadow(0 0 60px rgba(79,163,224,0.12));
 }
 
-.brain-region { cursor:pointer; }
+.brain-region {
+  cursor: pointer;
+  transition: filter 0.25s;
+}
 
 .brain-region ellipse,
 .brain-region path,
 .brain-region circle {
-  transition: fill-opacity 0.25s, filter 0.25s;
+  transition: fill-opacity 0.25s;
 }
 
 .brain-region:hover ellipse,
 .brain-region:hover path,
 .brain-region:hover circle {
   fill-opacity: 0.45 !important;
-  filter: drop-shadow(0 0 16px currentColor);
 }
 
-.brain-region text {
-  transition: opacity 0.25s;
-  pointer-events: none;
-}
-
-.brain-region:hover text { opacity: 1; }
+.brain-region text { pointer-events: none; }
 
 .brain-tooltip {
   position: absolute;
@@ -283,7 +290,7 @@ nav {
 
 .legend-dot { width:7px; height:7px; border-radius:50%; flex-shrink:0; }
 
-/* ── REGION HERO BANNER ── */
+/* ── REGION BANNER ── */
 .region-banner {
   width: 100%;
   height: 280px;
@@ -324,7 +331,7 @@ nav {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
 .region-number::after {
@@ -406,10 +413,8 @@ nav {
 .stat-value {
   font-family: 'Space Mono', monospace;
   font-size: 1.4rem;
-  color: var(--heading);
   display: block;
   margin-bottom: 0.4rem;
-  text-shadow: 0 0 20px currentColor;
 }
 
 .stat-label {
@@ -507,18 +512,13 @@ nav {
 .func-card:hover {
   border-color: var(--region-color, var(--accent));
   transform: translateY(-3px);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.3), 0 0 20px rgba(79,163,224,0.08);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
   background: var(--surface2);
 }
 
 .func-card:hover::before { transform: scaleX(1); }
 
-.func-icon {
-  font-size: 1.75rem;
-  margin-bottom: 0.75rem;
-  display: block;
-  filter: grayscale(0.2);
-}
+.func-icon { font-size:1.75rem; margin-bottom:0.75rem; display:block; }
 
 .func-card h3 {
   font-family: 'Space Mono', monospace;
@@ -566,11 +566,7 @@ nav {
   gap: 0.5rem;
 }
 
-.did-you-know .label::before {
-  content:'✦';
-  font-size: 0.55rem;
-}
-
+.did-you-know .label::before { content:'✦'; font-size:0.55rem; }
 .did-you-know p { margin:0; font-size:1.05rem; font-style:italic; color:var(--text); }
 
 /* ── QUIZ ── */
@@ -735,16 +731,85 @@ footer {
   background: linear-gradient(to top, rgba(79,163,224,0.02), transparent);
 }
 
-/* ── LIGHT MODE ── */
+/* ── SLATE MODE ── */
 body.light-mode {
-  --bg: #f0f4f8;
-  --surface: #ffffff;
-  --surface2: #f8fafc;
-  --border: #cbd5e1;
-  --text: #334155;
-  --text-dim: #6b8099;
-  --heading: #0f172a;
+  --bg: #1e2128;
+  --surface: #252930;
+  --surface2: #2c3038;
+  --border: #363c47;
+  --text: #b8c4d0;
+  --text-dim: #7a8a9a;
+  --heading: #dde6f0;
   --glow: rgba(79,163,224,0.2);
+  background-image:
+    radial-gradient(ellipse at 20% 50%, rgba(79,163,224,0.05) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(125,211,200,0.04) 0%, transparent 60%);
+}
+
+body.light-mode nav {
+  background: rgba(30,33,40,0.95);
+  border-bottom-color: #363c47;
+}
+
+body.light-mode .region-banner {
+  filter: brightness(1.2);
+}
+
+body.light-mode .func-card,
+body.light-mode .quiz-widget,
+body.light-mode .about-card,
+body.light-mode .did-you-know {
+  background: var(--surface);
+  border-color: var(--border);
+}
+
+body.light-mode .stat {
+  background: var(--surface);
+}
+
+body.light-mode .stats-row {
+  background: var(--border);
+}
+
+body.light-mode .quiz-option {
+  background: rgba(255,255,255,0.02);
+  border-color: var(--border);
+  color: var(--text);
+}
+
+body.light-mode .quiz-option:hover {
+  background: rgba(79,163,224,0.08);
+  color: var(--heading);
+}
+
+body.light-mode footer {
+  background: transparent;
+  border-top-color: var(--border);
+  color: var(--text-dim);
+}
+
+body.light-mode .legend-item {
+  background: rgba(255,255,255,0.02);
+  border-color: var(--border);
+  color: var(--text-dim);
+}
+
+body.light-mode .how-to-card {
+  background: var(--surface);
+  border-color: var(--border);
+}
+
+body.light-mode .fact-item {
+  background: var(--surface);
+}
+
+body.light-mode .region-link-card {
+  background: var(--surface);
+  border-color: var(--border);
+}
+
+body.light-mode .brain-tooltip {
+  background: rgba(37,41,48,0.98);
 }
 
 /* ── ANIMATIONS ── */
@@ -752,8 +817,6 @@ body.light-mode {
   from { opacity:0; transform:translateY(16px); }
   to   { opacity:1; transform:translateY(0); }
 }
-
-.fadeUp { opacity:0; animation: fadeUp 0.6s ease forwards; }
 
 /* ── RESPONSIVE ── */
 @media (max-width:640px) {
