@@ -1,1 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Temporal Lobe · The Human Brain</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    :root { --region-color: #f59e0b; }
 
+    .region-banner {
+      background: linear-gradient(135deg, #0d1520 0%, #1a1200 100%);
+    }
+
+    .region-banner-bg {
+      background: radial-gradient(ellipse at 30% 50%, rgba(245,158,11,0.25) 0%, transparent 70%),
+                  radial-gradient(ellipse at 80% 20%, rgba(245,158,11,0.1) 0%, transparent 60%);
+    }
+
+    .stat-value { color: #f59e0b; }
+  </style>
+</head>
+<body>
+
+  <div id="progress-bar"></div>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="../index.html" class="nav-logo">🧠 The Brain</a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <button class="theme-toggle" id="theme-btn" onclick="toggleTheme()">◑ Light</button>
+  </nav>
+
+  <div class="page">
+
+    <!-- BANNER -->
+    <div class="region-banner">
+      <div class="region-banner-bg"></div>
+      <div class="region-banner-grid"></div>
+      <div class="region-banner-content">
+        <div class="region-number" style="color:#f59e0b">Region 04 · Cerebral Cortex</div>
+        <h1>Temporal Lobe</h1>
+        <p class="subtitle">The brain's memory vault — where sound, language, and identity live.</p>
+      </div>
+    </div>
+
+    <div class="content-page">
+
+      <a href="../index.html" class="back-link">Back to Brain Map</a>
+
+      <!-- STATS -->
+      <div class="stats-row">
+        <div class="stat">
+          <span class="stat-value">~22%</span>
+          <span class="stat-label">of cortex</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">Both</span>
+          <span class="stat-label">hemispheres</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">Side</span>
+          <span class="stat-label">of the skull</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">3 Areas</span>
+          <span class="stat-label">auditory, memory, language</span>
+        </div>
+      </div>
+
+      <!-- CONTENT -->
+      <div class="content-body">
+
+        <h2>What Is the Temporal Lobe?</h2>
+        <p>
+          The temporal lobe sits on the sides of the brain, roughly behind your temples and
+          ears. It is one of the most complex and multifunctional regions in the entire brain,
+          handling everything from hearing and language comprehension to memory formation and
+          face recognition.
+        </p>
+        <p>
+          You have two temporal lobes — one on each side — and they don't do exactly the same
+          job. The left temporal lobe is dominant for language in most people, housing
+          Wernicke's area which lets you understand spoken and written words. The right
+          temporal lobe focuses more on music, tone of voice, and recognizing faces.
+        </p>
+
+        <h2>Key Functions</h2>
+        <div class="function-cards">
+          <div class="func-card">
+            <span class="func-icon">👂</span>
+            <h3>Hearing</h3>
+            <p>The auditory cortex processes all sounds your ears pick up.</p>
+          </div>
+          <div class="func-card">
+            <span class="func-icon">💬</span>
+            <h3>Language</h3>
+            <p>Wernicke's area lets you understand spoken and written language.</p>
+          </div>
+          <div class="func-card">
+            <span class="func-icon">🧠</span>
+            <h3>Memory</h3>
+            <p>Works with the hippocampus to store and retrieve long-term memories.</p>
+          </div>
+          <div class="func-card">
+            <span class="func-icon">😊</span>
+            <h3>Face Recognition</h3>
+            <p>The fusiform face area identifies and remembers faces.</p>
+          </div>
+          <div class="func-card">
+            <span class="func-icon">🎵</span>
+            <h3>Music Processing</h3>
+            <p>Interprets melody, rhythm, and emotional tone in music.</p>
+          </div>
+          <div class="func-card">
+            <span class="func-icon">😨</span>
+            <h3>Emotion</h3>
+            <p>Works with the amygdala to process emotional responses and reactions.</p>
+          </div>
+        </div>
+
+        <h2>Wernicke's Area — The Language Decoder</h2>
+        <p>
+          One of the most important structures in the temporal lobe is Wernicke's area,
+          located in the left hemisphere. While the frontal lobe's Broca's area helps you
+          produce speech, Wernicke's area is responsible for understanding it. It decodes
+          incoming language — both spoken words you hear and written words you read — and
+          gives them meaning.
+        </p>
+        <p>
+          When Wernicke's area is damaged, a person can still speak fluently and their voice
+          sounds completely normal — but the words they produce make no sense. They may string
+          together real words in nonsensical combinations, or even invent words entirely,
+          without realizing anything is wrong. This is called Wernicke's aphasia.
+        </p>
+
+        <div class="did-you-know">
+          <span class="label">Did You Know</span>
+          <p>
+            The reason a song can instantly transport you back to a specific memory is because
+            the temporal lobe processes both music and memory in closely connected regions.
+            Hearing a familiar song activates memory circuits almost immediately, which is also
+            why music therapy can help patients with Alzheimer's recall memories that seem
+            otherwise completely lost.
+          </p>
+        </div>
+
+        <h2>What Happens When It's Damaged?</h2>
+        <p>Damage to the temporal lobe can cause:</p>
+        <ul>
+          <li>Wernicke's aphasia — fluent but meaningless speech</li>
+          <li>Inability to recognize faces (prosopagnosia)</li>
+          <li>Hearing loss or auditory hallucinations</li>
+          <li>Severe memory impairment and amnesia</li>
+          <li>Changes in personality and emotional regulation</li>
+          <li>Difficulty understanding music or recognizing familiar sounds</li>
+        </ul>
+
+        <!-- QUIZ -->
+        <div class="quiz-widget">
+          <div class="quiz-header">
+            <div class="quiz-icon">🧩</div>
+            <h3>Quick Check — Temporal Lobe</h3>
+          </div>
+          <p class="quiz-question">What happens when Wernicke's area is damaged?</p>
+          <div class="quiz-options">
+            <button class="quiz-option" data-correct="false" data-letter="A">The person loses the ability to speak entirely</button>
+            <button class="quiz-option" data-correct="false" data-letter="B">The person can no longer hear sounds</button>
+            <button class="quiz-option" data-correct="true"  data-letter="C">The person speaks fluently but produces meaningless words</button>
+            <button class="quiz-option" data-correct="false" data-letter="D">The person loses all long-term memories</button>
+          </div>
+          <p class="quiz-feedback" id="quiz-feedback"></p>
+        </div>
+
+      </div>
+    </div>
+
+    <footer>
+      <p>The Human Brain · Interactive Neuroanatomy</p>
+    </footer>
+  </div>
+
+  <script src="../js/main.js"></script>
+  <script>
+    // Progress bar
+    window.addEventListener('scroll', () => {
+      const bar = document.getElementById('progress-bar');
+      const scrolled = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+      bar.style.width = scrolled + '%';
+    });
+  </script>
+</body>
+</html>
