@@ -8,7 +8,8 @@
 </head>
 <body>
 
-  <!-- NAVIGATION -->
+  <div id="progress-bar"></div>
+
   <nav>
     <a href="index.html" class="nav-logo">🧠 The Brain</a>
     <ul class="nav-links">
@@ -18,27 +19,20 @@
     <button class="theme-toggle" id="theme-btn" onclick="toggleTheme()">◑ Light</button>
   </nav>
 
-  <!-- PAGE -->
   <div class="page">
 
-    <!-- HERO -->
     <section class="hero">
       <p class="hero-label">Interactive Neuroanatomy</p>
       <h1>Explore the <em>Human Brain</em></h1>
       <p>Click any region of the brain below to learn what it does, how it works, and why it matters.</p>
     </section>
 
-    <!-- BRAIN MAP -->
     <section class="brain-map-section">
       <div class="brain-map-wrapper">
 
-        <!-- TOOLTIP -->
         <div class="brain-tooltip" id="brain-tooltip"></div>
 
-        <!-- BRAIN SVG -->
         <svg id="brain-svg" viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
-
-          <!-- Background glow -->
           <defs>
             <radialGradient id="bgGlow" cx="50%" cy="50%" r="50%">
               <stop offset="0%" stop-color="#4fa3e0" stop-opacity="0.06"/>
@@ -52,71 +46,56 @@
 
           <ellipse cx="400" cy="250" rx="370" ry="230" fill="url(#bgGlow)"/>
 
-          <!-- BRAIN OUTLINE (non-clickable base shape) -->
-          <g opacity="0.25">
+          <g opacity="0.2">
             <ellipse cx="400" cy="240" rx="280" ry="190" fill="none" stroke="#4fa3e0" stroke-width="1"/>
           </g>
 
           <!-- FRONTAL LOBE -->
-          <g class="brain-region"
-             data-name="Frontal Lobe"
-             data-href="pages/frontal-lobe.html">
-            <ellipse cx="260" cy="190" rx="130" ry="100" fill="#4fa3e0" fill-opacity="0.18" stroke="#4fa3e0" stroke-width="1.5"/>
-            <text x="260" y="185" text-anchor="middle" fill="#4fa3e0" font-family="Space Mono, monospace" font-size="13" filter="url(#glow)">FRONTAL</text>
-            <text x="260" y="202" text-anchor="middle" fill="#4fa3e0" font-family="Space Mono, monospace" font-size="13">LOBE</text>
+          <g class="brain-region" data-name="Frontal Lobe" data-href="pages/frontal-lobe.html" style="cursor:pointer">
+            <ellipse cx="240" cy="195" rx="135" ry="105" fill="#4fa3e0" fill-opacity="0.15" stroke="#4fa3e0" stroke-width="1.5"/>
+            <text x="240" y="190" text-anchor="middle" fill="#4fa3e0" font-family="Space Mono,monospace" font-size="13" pointer-events="none">FRONTAL</text>
+            <text x="240" y="207" text-anchor="middle" fill="#4fa3e0" font-family="Space Mono,monospace" font-size="13" pointer-events="none">LOBE</text>
           </g>
 
           <!-- PARIETAL LOBE -->
-          <g class="brain-region"
-             data-name="Parietal Lobe"
-             data-href="pages/parietal-lobe.html">
-            <ellipse cx="430" cy="165" rx="110" ry="80" fill="#7dd3c8" fill-opacity="0.18" stroke="#7dd3c8" stroke-width="1.5"/>
-            <text x="430" y="160" text-anchor="middle" fill="#7dd3c8" font-family="Space Mono, monospace" font-size="13" filter="url(#glow)">PARIETAL</text>
-            <text x="430" y="177" text-anchor="middle" fill="#7dd3c8" font-family="Space Mono, monospace" font-size="13">LOBE</text>
+          <g class="brain-region" data-name="Parietal Lobe" data-href="pages/parietal-lobe.html" style="cursor:pointer">
+            <ellipse cx="430" cy="160" rx="115" ry="80" fill="#7dd3c8" fill-opacity="0.15" stroke="#7dd3c8" stroke-width="1.5"/>
+            <text x="430" y="155" text-anchor="middle" fill="#7dd3c8" font-family="Space Mono,monospace" font-size="13" pointer-events="none">PARIETAL</text>
+            <text x="430" y="172" text-anchor="middle" fill="#7dd3c8" font-family="Space Mono,monospace" font-size="13" pointer-events="none">LOBE</text>
           </g>
 
           <!-- OCCIPITAL LOBE -->
-          <g class="brain-region"
-             data-name="Occipital Lobe"
-             data-href="pages/occipital-lobe.html">
-            <ellipse cx="570" cy="210" rx="95" ry="80" fill="#a78bfa" fill-opacity="0.18" stroke="#a78bfa" stroke-width="1.5"/>
-            <text x="570" y="205" text-anchor="middle" fill="#a78bfa" font-family="Space Mono, monospace" font-size="13" filter="url(#glow)">OCCIPITAL</text>
-            <text x="570" y="222" text-anchor="middle" fill="#a78bfa" font-family="Space Mono, monospace" font-size="13">LOBE</text>
+          <g class="brain-region" data-name="Occipital Lobe" data-href="pages/occipital-lobe.html" style="cursor:pointer">
+            <ellipse cx="575" cy="205" rx="95" ry="80" fill="#a78bfa" fill-opacity="0.15" stroke="#a78bfa" stroke-width="1.5"/>
+            <text x="575" y="200" text-anchor="middle" fill="#a78bfa" font-family="Space Mono,monospace" font-size="13" pointer-events="none">OCCIPITAL</text>
+            <text x="575" y="217" text-anchor="middle" fill="#a78bfa" font-family="Space Mono,monospace" font-size="13" pointer-events="none">LOBE</text>
           </g>
 
           <!-- TEMPORAL LOBE -->
-          <g class="brain-region"
-             data-name="Temporal Lobe"
-             data-href="pages/temporal-lobe.html">
-            <ellipse cx="370" cy="330" rx="120" ry="70" fill="#f59e0b" fill-opacity="0.18" stroke="#f59e0b" stroke-width="1.5"/>
-            <text x="370" y="325" text-anchor="middle" fill="#f59e0b" font-family="Space Mono, monospace" font-size="13" filter="url(#glow)">TEMPORAL</text>
-            <text x="370" y="342" text-anchor="middle" fill="#f59e0b" font-family="Space Mono, monospace" font-size="13">LOBE</text>
+          <g class="brain-region" data-name="Temporal Lobe" data-href="pages/temporal-lobe.html" style="cursor:pointer">
+            <ellipse cx="365" cy="330" rx="120" ry="68" fill="#f59e0b" fill-opacity="0.15" stroke="#f59e0b" stroke-width="1.5"/>
+            <text x="365" y="325" text-anchor="middle" fill="#f59e0b" font-family="Space Mono,monospace" font-size="13" pointer-events="none">TEMPORAL</text>
+            <text x="365" y="342" text-anchor="middle" fill="#f59e0b" font-family="Space Mono,monospace" font-size="13" pointer-events="none">LOBE</text>
           </g>
 
           <!-- CEREBELLUM -->
-          <g class="brain-region"
-             data-name="Cerebellum"
-             data-href="pages/cerebellum.html">
-            <ellipse cx="555" cy="340" rx="100" ry="75" fill="#34d399" fill-opacity="0.18" stroke="#34d399" stroke-width="1.5"/>
-            <text x="555" y="344" text-anchor="middle" fill="#34d399" font-family="Space Mono, monospace" font-size="13" filter="url(#glow)">CEREBELLUM</text>
+          <g class="brain-region" data-name="Cerebellum" data-href="pages/cerebellum.html" style="cursor:pointer">
+            <ellipse cx="560" cy="345" rx="100" ry="72" fill="#34d399" fill-opacity="0.15" stroke="#34d399" stroke-width="1.5"/>
+            <text x="560" y="349" text-anchor="middle" fill="#34d399" font-family="Space Mono,monospace" font-size="13" pointer-events="none">CEREBELLUM</text>
           </g>
 
           <!-- BRAINSTEM -->
-          <g class="brain-region"
-             data-name="Brainstem"
-             data-href="pages/brainstem.html">
-            <ellipse cx="460" cy="400" rx="55" ry="55" fill="#f87171" fill-opacity="0.18" stroke="#f87171" stroke-width="1.5"/>
-            <text x="460" y="395" text-anchor="middle" fill="#f87171" font-family="Space Mono, monospace" font-size="13" filter="url(#glow)">BRAIN</text>
-            <text x="460" y="412" text-anchor="middle" fill="#f87171" font-family="Space Mono, monospace" font-size="13">STEM</text>
+          <g class="brain-region" data-name="Brainstem" data-href="pages/brainstem.html" style="cursor:pointer">
+            <ellipse cx="463" cy="408" rx="55" ry="52" fill="#f87171" fill-opacity="0.15" stroke="#f87171" stroke-width="1.5"/>
+            <text x="463" y="403" text-anchor="middle" fill="#f87171" font-family="Space Mono,monospace" font-size="13" pointer-events="none">BRAIN</text>
+            <text x="463" y="420" text-anchor="middle" fill="#f87171" font-family="Space Mono,monospace" font-size="13" pointer-events="none">STEM</text>
           </g>
 
           <!-- HIPPOCAMPUS -->
-          <g class="brain-region"
-             data-name="Hippocampus"
-             data-href="pages/hippocampus.html">
-            <ellipse cx="240" cy="340" rx="80" ry="50" fill="#fb923c" fill-opacity="0.18" stroke="#fb923c" stroke-width="1.5"/>
-            <text x="240" y="335" text-anchor="middle" fill="#fb923c" font-family="Space Mono, monospace" font-size="11" filter="url(#glow)">HIPPO-</text>
-            <text x="240" y="350" text-anchor="middle" fill="#fb923c" font-family="Space Mono, monospace" font-size="11">CAMPUS</text>
+          <g class="brain-region" data-name="Hippocampus" data-href="pages/hippocampus.html" style="cursor:pointer">
+            <ellipse cx="235" cy="345" rx="82" ry="50" fill="#fb923c" fill-opacity="0.15" stroke="#fb923c" stroke-width="1.5"/>
+            <text x="235" y="340" text-anchor="middle" fill="#fb923c" font-family="Space Mono,monospace" font-size="11" pointer-events="none">HIPPO-</text>
+            <text x="235" y="355" text-anchor="middle" fill="#fb923c" font-family="Space Mono,monospace" font-size="11" pointer-events="none">CAMPUS</text>
           </g>
 
         </svg>
@@ -124,15 +103,14 @@
 
       <p class="click-hint">↑ hover to highlight · click to explore</p>
 
-      <!-- LEGEND -->
       <div class="region-legend">
-        <a href="pages/frontal-lobe.html"  class="legend-item"><span class="legend-dot" style="background:#4fa3e0"></span>Frontal Lobe</a>
-        <a href="pages/parietal-lobe.html" class="legend-item"><span class="legend-dot" style="background:#7dd3c8"></span>Parietal Lobe</a>
+        <a href="pages/frontal-lobe.html"   class="legend-item"><span class="legend-dot" style="background:#4fa3e0"></span>Frontal Lobe</a>
+        <a href="pages/parietal-lobe.html"  class="legend-item"><span class="legend-dot" style="background:#7dd3c8"></span>Parietal Lobe</a>
         <a href="pages/occipital-lobe.html" class="legend-item"><span class="legend-dot" style="background:#a78bfa"></span>Occipital Lobe</a>
-        <a href="pages/temporal-lobe.html" class="legend-item"><span class="legend-dot" style="background:#f59e0b"></span>Temporal Lobe</a>
-        <a href="pages/cerebellum.html"    class="legend-item"><span class="legend-dot" style="background:#34d399"></span>Cerebellum</a>
-        <a href="pages/brainstem.html"     class="legend-item"><span class="legend-dot" style="background:#f87171"></span>Brainstem</a>
-        <a href="pages/hippocampus.html"   class="legend-item"><span class="legend-dot" style="background:#fb923c"></span>Hippocampus</a>
+        <a href="pages/temporal-lobe.html"  class="legend-item"><span class="legend-dot" style="background:#f59e0b"></span>Temporal Lobe</a>
+        <a href="pages/cerebellum.html"     class="legend-item"><span class="legend-dot" style="background:#34d399"></span>Cerebellum</a>
+        <a href="pages/brainstem.html"      class="legend-item"><span class="legend-dot" style="background:#f87171"></span>Brainstem</a>
+        <a href="pages/hippocampus.html"    class="legend-item"><span class="legend-dot" style="background:#fb923c"></span>Hippocampus</a>
       </div>
 
     </section>
