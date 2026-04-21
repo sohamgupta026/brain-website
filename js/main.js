@@ -3,12 +3,12 @@ function toggleTheme() {
   document.body.classList.toggle('light-mode');
   const btn = document.getElementById('theme-btn');
   if (btn) {
-    btn.textContent = document.body.classList.contains('light-mode') ? '◐ Dark' : '◑ Light';
+    btn.textContent = document.body.classList.contains('light-mode') ? '◐ Deep Dark' : '◑ Slate';
   }
   localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
 }
 
-// Apply saved theme immediately
+// Apply saved theme immediately before page renders
 (function () {
   if (localStorage.getItem('theme') === 'light') {
     document.body.classList.add('light-mode');
@@ -16,10 +16,11 @@ function toggleTheme() {
 })();
 
 document.addEventListener('DOMContentLoaded', () => {
+
   // Update button text to match current theme
   const btn = document.getElementById('theme-btn');
-  if (btn && document.body.classList.contains('light-mode')) {
-    btn.textContent = '◐ Dark';
+  if (btn) {
+    btn.textContent = document.body.classList.contains('light-mode') ? '◐ Deep Dark' : '◑ Slate';
   }
 
   // ── NAV ACTIVE STATE ──
@@ -45,7 +46,8 @@ function initBrainMap() {
   const regions = document.querySelectorAll('.brain-region');
 
   regions.forEach(region => {
-    // Hover — show tooltip
+
+    // Show tooltip on hover
     region.addEventListener('mouseenter', () => {
       tooltip.textContent = region.getAttribute('data-name') + '  →  click to explore';
       tooltip.classList.add('visible');
@@ -67,14 +69,12 @@ function initBrainMap() {
       tooltip.classList.remove('visible');
     });
 
-    // ── CLICK TO NAVIGATE ──
+    // Navigate on click
     region.addEventListener('click', (e) => {
       e.preventDefault();
       e.stopPropagation();
       const href = region.getAttribute('data-href');
-      if (href) {
-        window.location.href = href;
-      }
+      if (href) window.location.href = href;
     });
   });
 }
@@ -88,7 +88,6 @@ function initQuiz() {
   let answered = false;
 
   options.forEach(opt => {
-    // Make sure cursor shows pointer
     opt.style.cursor = 'pointer';
 
     opt.addEventListener('click', (e) => {
@@ -98,19 +97,14 @@ function initQuiz() {
 
       const isCorrect = opt.getAttribute('data-correct') === 'true';
 
-      // Mark clicked answer
       opt.classList.add(isCorrect ? 'correct' : 'wrong');
 
-      // If wrong, highlight the correct one
       if (!isCorrect) {
         options.forEach(o => {
-          if (o.getAttribute('data-correct') === 'true') {
-            o.classList.add('correct');
-          }
+          if (o.getAttribute('data-correct') === 'true') o.classList.add('correct');
         });
       }
 
-      // Show feedback
       feedback.textContent = isCorrect
         ? '✓ Correct! Great work.'
         : '✗ Not quite — the correct answer is highlighted above.';
@@ -124,3 +118,11 @@ function initQuiz() {
     });
   });
 }
+
+// ── SCROLL PROGRESS BAR ──
+window.addEventListener('scroll', () => {
+  const bar = document.getElementById('progress-bar');
+  if (!bar) return;
+  const scrolled = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+  bar.style.width = scrolled + '%';
+});
