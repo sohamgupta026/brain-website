@@ -5,6 +5,76 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Human Brain</title>
   <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .brain-map-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      opacity: 0;
+      animation: fadeUp 0.8s ease 0.4s forwards;
+    }
+
+    #brain-svg {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: drop-shadow(0 0 60px rgba(79,163,224,0.15));
+    }
+
+    .brain-region {
+      cursor: pointer;
+    }
+
+    .brain-region ellipse,
+    .brain-region path,
+    .brain-region circle {
+      transition: fill-opacity 0.25s;
+    }
+
+    .brain-region:hover ellipse,
+    .brain-region:hover path,
+    .brain-region:hover circle {
+      fill-opacity: 0.45 !important;
+    }
+
+    .brain-region text {
+      pointer-events: none;
+    }
+
+    .brain-tooltip {
+      position: absolute;
+      background: rgba(13,21,32,0.95);
+      border: 1px solid var(--accent);
+      border-radius: 8px;
+      padding: 0.55rem 1.1rem;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--accent);
+      letter-spacing: 0.08em;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.15s;
+      white-space: nowrap;
+      box-shadow: 0 0 25px rgba(79,163,224,0.2);
+      z-index: 10;
+    }
+
+    .brain-tooltip.visible { opacity: 1; }
+
+    .click-hint {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.66rem;
+      color: var(--text-dim);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      text-align: center;
+      margin-top: 1.75rem;
+      animation: pulse 2.5s ease-in-out infinite;
+    }
+
+    @keyframes pulse { 0%,100%{opacity:0.4} 50%{opacity:1} }
+  </style>
 </head>
 <body>
 
@@ -52,7 +122,10 @@
             </radialGradient>
             <filter id="glow">
               <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-              <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+              <feMerge>
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
             </filter>
           </defs>
 
