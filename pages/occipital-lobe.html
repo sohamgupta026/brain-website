@@ -3,12 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Occipital Lobe · The Human Brain</title>
+  <title>Parietal Lobe · The Human Brain</title>
   <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    :root { --region-color: #7dd3c8; }
+    .region-banner { background: linear-gradient(135deg, #0d1520 0%, #001a18 100%); }
+    .region-banner-bg {
+      background: radial-gradient(ellipse at 30% 50%, rgba(125,211,200,0.25) 0%, transparent 70%),
+                  radial-gradient(ellipse at 80% 20%, rgba(125,211,200,0.1) 0%, transparent 60%);
+    }
+    .stat-value { color: #7dd3c8; }
+  </style>
 </head>
 <body>
 
-  <!-- NAVIGATION -->
+  <div id="progress-bar"></div>
+
   <nav>
     <a href="../index.html" class="nav-logo">🧠 The Brain</a>
     <ul class="nav-links">
@@ -19,133 +29,72 @@
   </nav>
 
   <div class="page">
-    <div class="content-page">
 
+    <div class="region-banner">
+      <div class="region-banner-bg"></div>
+      <div class="region-banner-grid"></div>
+      <div class="region-banner-content">
+        <div class="region-number" style="color:#7dd3c8">Region 02 · Cerebral Cortex</div>
+        <h1>Parietal Lobe</h1>
+        <p class="subtitle">Your brain's GPS — processing touch, space, and where your body is in the world.</p>
+      </div>
+    </div>
+
+    <div class="content-page">
       <a href="../index.html" class="back-link">Back to Brain Map</a>
 
-      <!-- HEADER -->
-      <div class="region-header">
-        <span class="region-tag" style="color:#a78bfa">Region 03 · Cerebral Cortex</span>
-        <h1>Occipital Lobe</h1>
-        <p class="subtitle">The brain's visual cortex — everything you see is processed here.</p>
-      </div>
-
-      <!-- STATS -->
       <div class="stats-row">
-        <div class="stat">
-          <span class="stat-value">~17%</span>
-          <span class="stat-label">of cortex</span>
-        </div>
-        <div class="stat">
-          <span class="stat-value">V1–V5</span>
-          <span class="stat-label">visual areas</span>
-        </div>
-        <div class="stat">
-          <span class="stat-value">Back</span>
-          <span class="stat-label">of the skull</span>
-        </div>
-        <div class="stat">
-          <span class="stat-value">30%</span>
-          <span class="stat-label">of cortex used for vision</span>
-        </div>
+        <div class="stat"><span class="stat-value">~19%</span><span class="stat-label">of cortex</span></div>
+        <div class="stat"><span class="stat-value">2 Areas</span><span class="stat-label">anterior + posterior</span></div>
+        <div class="stat"><span class="stat-value">5 Senses</span><span class="stat-label">integration hub</span></div>
+        <div class="stat"><span class="stat-value">Top-back</span><span class="stat-label">location in skull</span></div>
       </div>
 
-      <!-- CONTENT -->
       <div class="content-body">
 
-        <h2>What Is the Occipital Lobe?</h2>
-        <p>
-          The occipital lobe is located at the very back of the brain and is the smallest
-          of the four cerebral lobes. It is entirely dedicated to processing visual
-          information. Every time you look at something — a face, a color, a moving object —
-          the raw data from your eyes travels to the occipital lobe to be decoded and
-          interpreted.
-        </p>
-        <p>
-          Despite being at the back of your head, it processes everything you see in front
-          of you. The left occipital lobe processes the right visual field and the right
-          occipital lobe processes the left visual field — a crossover that happens because
-          of how the optic nerves are wired.
-        </p>
+        <h2>What Is the Parietal Lobe?</h2>
+        <p>The parietal lobe sits at the top and toward the back of the brain, sandwiched between the frontal lobe at the front and the occipital lobe at the rear. It is your brain's primary sensory processing center — the place where information from your skin, muscles, and joints gets interpreted and turned into a coherent picture of your body and the space around it.</p>
+        <p>It is split into two main sections. The anterior parietal lobe contains the somatosensory cortex, which processes touch and body sensation. The posterior parietal lobe integrates information from multiple senses to help you navigate and interact with the world.</p>
 
         <h2>Key Functions</h2>
         <div class="function-cards">
-          <div class="func-card">
-            <span class="func-icon">👁️</span>
-            <h3>Visual Processing</h3>
-            <p>Receives and decodes raw visual signals sent from the retinas.</p>
-          </div>
-          <div class="func-card">
-            <span class="func-icon">🎨</span>
-            <h3>Color Recognition</h3>
-            <p>Identifies and distinguishes between different colors and hues.</p>
-          </div>
-          <div class="func-card">
-            <span class="func-icon">📐</span>
-            <h3>Shape & Depth</h3>
-            <p>Processes the shapes, edges, and depth of objects in your visual field.</p>
-          </div>
-          <div class="func-card">
-            <span class="func-icon">🏃</span>
-            <h3>Motion Detection</h3>
-            <p>Tracks moving objects and calculates speed and direction.</p>
-          </div>
-          <div class="func-card">
-            <span class="func-icon">🔤</span>
-            <h3>Reading</h3>
-            <p>Processes the visual appearance of letters and words before language areas interpret them.</p>
-          </div>
-          <div class="func-card">
-            <span class="func-icon">🗺️</span>
-            <h3>Spatial Mapping</h3>
-            <p>Helps build a visual map of the environment around you.</p>
-          </div>
+          <div class="func-card"><span class="func-icon">✋</span><h3>Touch Processing</h3><p>Interprets pain, pressure, temperature, and texture from your skin.</p></div>
+          <div class="func-card"><span class="func-icon">📍</span><h3>Spatial Awareness</h3><p>Tracks where your body is in space and builds a mental map of your surroundings.</p></div>
+          <div class="func-card"><span class="func-icon">🔢</span><h3>Math & Numbers</h3><p>Processes numerical information and spatial reasoning used in mathematics.</p></div>
+          <div class="func-card"><span class="func-icon">🤲</span><h3>Hand-Eye Coordination</h3><p>Links what you see with where your hands are to guide movement.</p></div>
+          <div class="func-card"><span class="func-icon">📖</span><h3>Reading & Writing</h3><p>Helps integrate visual and spatial information needed to read and write.</p></div>
+          <div class="func-card"><span class="func-icon">🧭</span><h3>Navigation</h3><p>Works like an internal GPS to help you find your way through environments.</p></div>
         </div>
 
-        <h2>How Visual Processing Works</h2>
-        <p>
-          When light hits your retina, it gets converted into electrical signals that travel
-          along the optic nerve to the primary visual cortex — also called V1 — at the back
-          of the occipital lobe. From there, visual information splits into two processing
-          streams.
-        </p>
-        <p>
-          The ventral stream, sometimes called the "what pathway," travels downward toward
-          the temporal lobe and helps you identify what you are looking at — recognizing
-          faces, objects, and colors. The dorsal stream, or "where pathway," travels upward
-          toward the parietal lobe and tells you where objects are and how to interact
-          with them.
-        </p>
+        <h2>The Somatosensory Cortex</h2>
+        <p>One of the most fascinating structures in the parietal lobe is the somatosensory cortex. It contains a complete map of your entire body — but the map is wildly distorted. Body parts with more nerve endings, like your lips and fingertips, take up far more space in the cortex than larger areas like your back or legs.</p>
+        <p>This distorted body map is called the cortical homunculus. If you drew a human figure where each body part was sized according to how much brain space it gets, you would end up with a creature with enormous hands, giant lips, and a tiny torso.</p>
 
         <div class="did-you-know">
           <span class="label">Did You Know</span>
-          <p>
-            Even when your eyes are closed, your occipital lobe stays active. When you dream,
-            it fires almost as intensely as when you are awake — which is why dreams feel
-            so visually vivid and real. Some blind people also experience visual dreams if
-            they lost their sight after early childhood.
-          </p>
+          <p>Your fingertips have so many nerve endings that the somatosensory cortex devotes more space to processing them than it does to your entire chest and abdomen combined. This is why you can read Braille with your fingers but not with your back.</p>
         </div>
 
         <h2>What Happens When It's Damaged?</h2>
-        <p>Damage to the occipital lobe can cause:</p>
         <ul>
-          <li>Cortical blindness — loss of vision even though the eyes are fine</li>
-          <li>Inability to recognize colors (achromatopsia)</li>
-          <li>Visual hallucinations and distortions</li>
-          <li>Difficulty recognizing faces or objects</li>
-          <li>Loss of the ability to perceive motion</li>
+          <li>Inability to recognize objects by touch alone</li>
+          <li>Hemispatial neglect — ignoring one entire side of the world</li>
+          <li>Difficulty with math and spatial reasoning</li>
+          <li>Problems with reading, writing, and language comprehension</li>
+          <li>Loss of coordination between vision and hand movement</li>
         </ul>
 
-        <!-- QUIZ -->
         <div class="quiz-widget">
-          <h3>Quick Check — Occipital Lobe</h3>
-          <p class="quiz-question">What is the name of the pathway that helps you identify WHAT you are looking at?</p>
+          <div class="quiz-header">
+            <div class="quiz-icon">🧩</div>
+            <h3>Quick Check — Parietal Lobe</h3>
+          </div>
+          <p class="quiz-question">What is the name of the distorted body map found in the parietal lobe?</p>
           <div class="quiz-options">
-            <button class="quiz-option" data-correct="false">The Dorsal Stream</button>
-            <button class="quiz-option" data-correct="true">The Ventral Stream</button>
-            <button class="quiz-option" data-correct="false">The Optic Pathway</button>
-            <button class="quiz-option" data-correct="false">The Visual Cortex</button>
+            <button class="quiz-option" data-correct="false" data-letter="A">The Sensory Atlas</button>
+            <button class="quiz-option" data-correct="false" data-letter="B">The Neural Map</button>
+            <button class="quiz-option" data-correct="true"  data-letter="C">The Cortical Homunculus</button>
+            <button class="quiz-option" data-correct="false" data-letter="D">The Somatosensory Grid</button>
           </div>
           <p class="quiz-feedback" id="quiz-feedback"></p>
         </div>
@@ -153,11 +102,16 @@
       </div>
     </div>
 
-    <footer>
-      <p>The Human Brain · Interactive Neuroanatomy</p>
-    </footer>
+    <footer><p>The Human Brain · Interactive Neuroanatomy</p></footer>
   </div>
 
   <script src="../js/main.js"></script>
+  <script>
+    window.addEventListener('scroll', () => {
+      const bar = document.getElementById('progress-bar');
+      const scrolled = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+      bar.style.width = scrolled + '%';
+    });
+  </script>
 </body>
 </html>
