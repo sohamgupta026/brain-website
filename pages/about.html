@@ -17,17 +17,165 @@
                   radial-gradient(ellipse at 80% 20%, rgba(79,163,224,0.1) 0%, transparent 60%);
     }
 
-    .brain-diagram-img {
-      width: 100%;
-      max-width: 600px;
-      display: block;
-      margin: 0 auto 2.5rem;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      opacity: 0.9;
-      box-shadow: 0 8px 40px rgba(0,0,0,0.4);
+    /* ── DIAGRAM SECTION ── */
+    .diagram-section {
+      margin: 0 0 3rem;
     }
 
+    .diagram-click-wrap {
+      position: relative;
+      cursor: zoom-in;
+      display: block;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 8px 40px rgba(0,0,0,0.4);
+      transition: box-shadow 0.3s, transform 0.3s;
+      max-width: 700px;
+      margin: 0 auto 1rem;
+    }
+
+    .diagram-click-wrap:hover {
+      box-shadow: 0 12px 60px rgba(79,163,224,0.2);
+      transform: translateY(-2px);
+    }
+
+    .brain-diagram-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      opacity: 0.92;
+      transition: opacity 0.2s;
+    }
+
+    .diagram-click-wrap:hover .brain-diagram-img {
+      opacity: 1;
+    }
+
+    .diagram-zoom-hint {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      background: rgba(6,10,16,0.85);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.3rem 0.7rem;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      backdrop-filter: blur(8px);
+    }
+
+    .diagram-caption {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-top: 3px solid var(--accent2);
+      border-radius: 0 0 12px 12px;
+      padding: 1.5rem 2rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .diagram-caption-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent2);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .diagram-caption-label::before { content: '✦'; font-size: 0.55rem; }
+
+    .diagram-caption p {
+      font-size: 0.98rem;
+      color: var(--text-dim);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .diagram-region-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .diagram-tag {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.65rem;
+      border-radius: 20px;
+      border: 1px solid currentColor;
+      opacity: 0.8;
+    }
+
+    /* ── LIGHTBOX ── */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.95);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+      cursor: zoom-out;
+      backdrop-filter: blur(8px);
+    }
+
+    .lightbox.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .lightbox img {
+      max-width: 92vw;
+      max-height: 92vh;
+      object-fit: contain;
+      border-radius: 12px;
+      box-shadow: 0 0 80px rgba(79,163,224,0.15);
+      transform: scale(0.95);
+      transition: transform 0.3s;
+    }
+
+    .lightbox.active img {
+      transform: scale(1);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text-dim);
+      font-family: 'Space Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .lightbox-close:hover {
+      color: var(--heading);
+      border-color: var(--accent);
+      background: rgba(79,163,224,0.08);
+    }
+
+    /* ── REST OF PAGE ── */
     .region-links {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -54,12 +202,7 @@
       background: var(--surface2);
     }
 
-    .region-link-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
+    .region-link-dot { width:10px; height:10px; border-radius:50%; flex-shrink:0; }
 
     .region-link-card span {
       font-family: 'Space Mono', monospace;
@@ -94,14 +237,8 @@
       margin: 1.5rem 0 2rem;
     }
 
-    .fact-item {
-      background: var(--surface);
-      padding: 1.5rem;
-      text-align: center;
-      transition: background 0.2s;
-    }
-
-    .fact-item:hover { background: var(--surface2); }
+    .fact-item { background:var(--surface); padding:1.5rem; text-align:center; transition:background 0.2s; }
+    .fact-item:hover { background:var(--surface2); }
 
     .fact-number {
       font-family: 'Space Mono', monospace;
@@ -149,8 +286,7 @@
       font-size: 2.5rem;
       color: var(--border);
       position: absolute;
-      top: 0.5rem;
-      right: 1rem;
+      top: 0.5rem; right: 1rem;
       line-height: 1;
       font-weight: 700;
     }
@@ -165,15 +301,16 @@
       position: relative;
     }
 
-    .how-to-card p {
-      font-size: 0.95rem;
-      color: var(--text-dim);
-      margin: 0;
-      position: relative;
-    }
+    .how-to-card p { font-size:0.95rem; color:var(--text-dim); margin:0; position:relative; }
   </style>
 </head>
 <body>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()">✕ Close</button>
+    <img src="../images/brain-diagram.png" alt="Full size brain diagram" />
+  </div>
 
   <div id="progress-bar"></div>
 
@@ -204,11 +341,39 @@
 
       <div class="content-body">
 
-        <img
-          src="../images/brain-diagram.png"
-          alt="Diagram of human brain structures showing major regions"
-          class="brain-diagram-img"
-        />
+        <!-- DIAGRAM SECTION -->
+        <div class="diagram-section">
+
+          <div class="diagram-click-wrap" onclick="openLightbox()">
+            <img
+              src="../images/brain-diagram.png"
+              alt="Detailed anatomical diagram of the human brain showing all major regions"
+              class="brain-diagram-img"
+            />
+            <span class="diagram-zoom-hint">🔍 Click to enlarge</span>
+          </div>
+
+          <div class="diagram-caption">
+            <span class="diagram-caption-label">Anatomical Reference Diagram</span>
+            <p>
+              This cross-sectional illustration shows the seven major regions of the human
+              brain covered on this site. Each region is color-coded and labeled with its
+              primary function. The diagram shows a lateral view — meaning the brain is
+              seen from the side — which reveals the layered structure from the outer
+              cerebral cortex all the way down to the brainstem at the base.
+            </p>
+            <div class="diagram-region-tags">
+              <span class="diagram-tag" style="color:#4fa3e0">Frontal Lobe</span>
+              <span class="diagram-tag" style="color:#7dd3c8">Parietal Lobe</span>
+              <span class="diagram-tag" style="color:#a78bfa">Occipital Lobe</span>
+              <span class="diagram-tag" style="color:#f59e0b">Temporal Lobe</span>
+              <span class="diagram-tag" style="color:#fb923c">Hippocampus</span>
+              <span class="diagram-tag" style="color:#34d399">Cerebellum</span>
+              <span class="diagram-tag" style="color:#f87171">Brainstem</span>
+            </div>
+          </div>
+
+        </div>
 
         <h2>What Is This Site?</h2>
         <p>This is an interactive neuroanatomy guide built to make learning about the human brain visual, engaging, and accessible. Instead of reading a flat textbook, you can click directly on the brain regions that interest you and explore each one through detailed descriptions, key functions, real-world cases, and a quick quiz to test your understanding.</p>
@@ -323,10 +488,27 @@
 
   <script src="../js/main.js"></script>
   <script>
+    // Progress bar
     window.addEventListener('scroll', () => {
       const bar = document.getElementById('progress-bar');
       const scrolled = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
       bar.style.width = scrolled + '%';
+    });
+
+    // Lightbox
+    function openLightbox() {
+      document.getElementById('lightbox').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    // Close lightbox with Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
     });
   </script>
 </body>
