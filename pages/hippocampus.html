@@ -1,1 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hippocampus · The Human Brain</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    :root { --region-color: #fb923c; }
 
+    .region-banner {
+      background: linear-gradient(135deg, #0d1520 0%, #1a0e00 100%);
+    }
+
+    .region-banner-bg {
+      background: radial-gradient(ellipse at 30% 50%, rgba(251,146,60,0.25) 0%, transparent 70%),
+                  radial-gradient(ellipse at 80% 20%, rgba(251,146,60,0.1) 0%, transparent 60%);
+    }
+
+    .stat-value { color: #fb923c; }
+  </style>
+</head>
+<body>
+
+  <div id="progress-bar"></div>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="../index.html" class="nav-logo">🧠 The Brain</a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <button class="theme-toggle" id="theme-btn" onclick="toggleTheme()">◑ Light</button>
+  </nav>
+
+  <div class="page">
+
+    <!-- BANNER -->
+    <div class="region-banner">
+      <div class="region-banner-bg"></div>
+      <div class="region-banner-grid"></div>
+      <div class="region-banner-content">
+        <div class="region-number" style="color:#fb923c">Region 07 · Limbic System</div>
+        <h1>Hippocampus</h1>
+        <p class="subtitle">The brain's memory architect — converting moments into lasting memories.</p>
+      </div>
+    </div>
+
+    <div class="content-page">
+
+      <a href="../index.html" class="back-link">Back to Brain Map</a>
+
+      <!-- STATS -->
+      <div class="stats-row">
+        <div class="stat">
+          <span class="stat-value">2</span>
+          <span class="stat-label">one per hemisphere</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">~3.5cm</span>
+          <span class="stat-label">in length each</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">Sea horse</span>
+          <span class="stat-label">shape it's named after</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">Limbic</span>
+          <span class="stat-label">system region</span>
+        </div>
+      </div>
+
+      <!-- CONTENT -->
+      <div class="content-body">
+
+        <h2>What Is the Hippocampus?</h2>
+        <p>
+          The hippocampus is a small curved structure buried deep inside the temporal lobe,
+          one on each side of the brain. Its name comes from the Greek word for seahorse
+          because of its distinctive curved shape. Despite its small size, it is one of the
+          most studied and important structures in the entire brain — because without it,
+          you cannot form any new long-term memories.
+        </p>
+        <p>
+          It sits at the heart of the brain's limbic system, the network of structures
+          responsible for emotion, motivation, and memory. The hippocampus acts as a
+          gateway — deciding which experiences are important enough to be converted from
+          short-term impressions into permanent long-term memories stored across the cortex.
+        </p>
+
+        <h2>Key Functions</h2>
+        <div class="function-cards">
+          <div class="func-card">
+            <span class="func-icon">💾</span>
+            <h3>Memory Formation</h3>
+            <p>Converts short-term experiences into long-term memories stored in the cortex.</p>
+          </div>
+          <div class="func-card">
+            <span class="func-icon">🗺️</span>
+            <h3>Spatial Navigation</h3>
+            <p>Contains place cells that map your environment and track your location.</p>
+          </div>
+          <div class="func-card">
+            <span class="func-icon">📅</span>
+            <h3>Episodic Memory</h3>
+            <p>Stores memories of personal life events with context of time and place.</p>
+          </div>
+          <div class="func-card">
+            <span class="func-icon">🔗</span>
+            <h3>Memory Consolidation</h3>
+            <p>During sleep, replays and strengthens memories recorded during the day.</p>
+          </div>
+          <div class="func-card">
+            <span class="func-icon">😰</span>
+            <h3>Stress Response</h3>
+            <p>Regulates the stress hormone cortisol and helps manage emotional memories.</p>
+          </div>
+          <div class="func-card">
+            <span class="func-icon">🔄</span>
+            <h3>Pattern Separation</h3>
+            <p>Distinguishes between similar memories so they don't get confused with each other.</p>
+          </div>
+        </div>
+
+        <h2>The Case of Patient H.M.</h2>
+        <p>
+          The most famous case in neuroscience history belongs to a man known only as H.M.
+          In 1953, surgeon William Beecher Scoville removed most of H.M.'s hippocampus on
+          both sides of his brain in an attempt to cure his severe epilepsy. The surgery
+          worked — but the consequences were devastating and unexpected.
+        </p>
+        <p>
+          From that moment on, H.M. was completely unable to form any new long-term memories.
+          Every person he met, every conversation he had, every experience he lived — all of
+          it vanished within minutes. He could remember everything from before the surgery
+          perfectly, but his life after it was an endless present with no ability to build
+          a future. He lived this way for 55 years until his death in 2008, and his case
+          transformed our entire understanding of how memory works.
+        </p>
+
+        <div class="did-you-know">
+          <span class="label">Did You Know</span>
+          <p>
+            London taxi drivers have a significantly larger hippocampus than average. A famous
+            study found that the more years a driver had spent navigating London's enormously
+            complex street network, the larger their hippocampus had grown. It was one of the
+            first clear pieces of evidence that the adult human brain can physically change
+            and grow in response to experience — a property called neuroplasticity.
+          </p>
+        </div>
+
+        <h2>The Hippocampus and Alzheimer's Disease</h2>
+        <p>
+          The hippocampus is one of the first regions of the brain to be damaged by
+          Alzheimer's disease, which is why memory loss — especially of recent events — is
+          the earliest and most recognizable symptom. As the disease progresses and spreads
+          beyond the hippocampus into the cortex, patients gradually lose older memories,
+          language, and eventually all cognitive function.
+        </p>
+
+        <h2>What Happens When It's Damaged?</h2>
+        <ul>
+          <li>Anterograde amnesia — inability to form any new long-term memories</li>
+          <li>Severe disorientation and inability to navigate familiar environments</li>
+          <li>Loss of episodic memory — personal life events and experiences</li>
+          <li>Difficulty distinguishing between similar memories or situations</li>
+          <li>Increased anxiety and difficulty regulating stress responses</li>
+          <li>Early-stage Alzheimer's symptoms including forgetfulness and confusion</li>
+        </ul>
+
+        <!-- QUIZ -->
+        <div class="quiz-widget">
+          <div class="quiz-header">
+            <div class="quiz-icon">🧩</div>
+            <h3>Quick Check — Hippocampus</h3>
+          </div>
+          <p class="quiz-question">What did the famous case of Patient H.M. teach scientists about the hippocampus?</p>
+          <div class="quiz-options">
+            <button class="quiz-option" data-correct="false" data-letter="A">That it controls emotional responses like fear and anger</button>
+            <button class="quiz-option" data-correct="true"  data-letter="B">That it is essential for forming new long-term memories</button>
+            <button class="quiz-option" data-correct="false" data-letter="C">That it is responsible for spatial navigation only</button>
+            <button class="quiz-option" data-correct="false" data-letter="D">That removing it improves long-term memory storage</button>
+          </div>
+          <p class="quiz-feedback" id="quiz-feedback"></p>
+        </div>
+
+      </div>
+    </div>
+
+    <footer>
+      <p>The Human Brain · Interactive Neuroanatomy</p>
+    </footer>
+  </div>
+
+  <script src="../js/main.js"></script>
+  <script>
+    window.addEventListener('scroll', () => {
+      const bar = document.getElementById('progress-bar');
+      const scrolled = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+      bar.style.width = scrolled + '%';
+    });
+  </script>
+</body>
+</html>
